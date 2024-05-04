@@ -392,7 +392,7 @@
                 
                 <div class="row">
                     <div class="col"> 
-                        <a href="services_business.php ?id_resident=<?= $userdetails['id_resident'];?>">
+                        <a href="services_business.php">
                             <div class="zoom1"> 
                                 <div class="card"> 
                                     <div class="card-body text-center"> 
@@ -405,7 +405,7 @@
                     </div>
                     
                     <div class="col"> 
-                        <a href="services_certofindigency.php ?id_resident=<?= $userdetails['id_resident'];?>">
+                        <a href="services_certofindigency.php">
                             <div class="zoom1">
                                 <div class="card"> 
                                     <div class="card-body text-center"> 
@@ -421,7 +421,7 @@
                 <br>
                 <div class="row card-spacing"> 
                     <div class="col">
-                        <a href="services_certofres.php ?id_resident=<?= $userdetails['id_resident'];?>"> 
+                        <a href="services_certofres.php"> 
                         <div class="zoom1">    
                             <div class="card"> 
                                 <div class="card-body text-center"> 
@@ -434,7 +434,7 @@
                     </div>
 
                     <div class="col">
-                        <a href="services_brgyclearance.php ?id_resident=<?= $userdetails['id_resident'];?>"> 
+                        <a href="services_brgyclearance.php"> 
                         <div class="zoom1">    
                             <div class="card"> 
                                 <div class="card-body text-center">
@@ -447,7 +447,7 @@
                     </div>
 
                     <div class="col">
-                        <a href="services_blotter.php ?id_resident=<?= $userdetails['id_resident'];?>"> 
+                        <a href="services_blotter.php"> 
                         <div class="zoom1">    
                             <div class="card"> 
                                 <div class="card-body text-center">
