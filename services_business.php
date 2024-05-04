@@ -378,7 +378,7 @@
 
 <div class="container-fluid container1"style="height:450px;"> 
             <div class="row"> 
-                <div class="col"> 
+                <div class="col" style="background-color: #ececec;"> 
                     <div class="header">
                         <h1 class="text1">Business Permit (Mayor's Permit) </h1>
                         <h5> Before you can start operating your business in the Philippines, you need to secure 
