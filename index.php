@@ -1501,7 +1501,7 @@ nav {
       <h2 class="section__header">Recent Activities</h2>
       <div class="offer__grid">
         <div class="offer__card">
-          <?php
+        <?php
               require('classes/conn.php');
 
               // Prepare the SQL query
@@ -1526,7 +1526,7 @@ nav {
               ?>
         </div>
         <div class="offer__card">
-          <?php
+        <?php
               require('classes/conn.php');
 
               // Prepare the SQL query
@@ -1551,7 +1551,7 @@ nav {
           ?>
         </div>
         <div class="offer__card">
-          <?php
+        <?php
               require('classes/conn.php');
 
               // Prepare the SQL query
