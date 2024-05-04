@@ -342,7 +342,7 @@ a:hover{
             <img src="assets/goloo.png">
         </div>
         <div class="login-content">
-            <form action="index.html">
+        <form method="post" class="input-container">
                 <!--<img src="assets/goloo.png">-->
                 <h2 class="title">Biclatan InfoSystem</h2>
                 <div class="input-div one">
