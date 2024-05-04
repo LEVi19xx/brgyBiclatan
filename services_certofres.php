@@ -15,7 +15,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.2.6/js/bootstrap-modalmanager.min.js" integrity="sha512-/HL24m2nmyI2+ccX+dSHphAHqLw60Oj5sK8jf59VWtFWZi9vx7jzoxbZmcBeeTeCUc7z1mTs3LfyXGuBU32t+w==" crossorigin="anonymous"></script>
       <!-- responsive tags for screen compatibility -->
       <meta name="viewport" content="width=device-width, initial-scale=1"><!-- bootstrap css --> 
-      <link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+      <link href="bootstrap.css" rel="stylesheet" type="text/css">
       <!-- fontawesome icons --> 
       <script src="https://kit.fontawesome.com/67a9b7069e.js" crossorigin="anonymous"></script>
   
@@ -175,11 +175,6 @@
                 text-align: center;
             }
 
-            .text1{
-                margin-top: 30px;
-                font-size: 50px;
-            }
-
             .applybutton
             {
                 width: 100% !important;
@@ -196,6 +191,11 @@
                 margin-top: 10px;
                 position: relative;
                 left: -28%;
+            }
+
+            .text1{
+                margin-top: 30px;
+                font-size: 50px;
             }
 
             .picture{
@@ -223,24 +223,16 @@
             background: #555; 
             }
 
-            .card5 {
-                width: 195px;
-                height: 210px;
-                overflow: auto;
-                margin: auto;
-                color: white;
-            }
-
             .card4 {
-                width: 195px;
+                width: 250px;
                 height: 210px;
-                overflow: auto;
+                overflow: hidden;
                 margin: auto;
                 color: white;
             }
 
             .card3 {
-                width: 195px;
+                width: 250px;
                 height: 210px;
                 overflow: hidden;
                 margin: auto;
@@ -248,7 +240,7 @@
             }
 
             .card2 {
-                width: 195px;
+                width: 250px;
                 height: 210px;
                 overflow: auto;
                 margin: auto;
@@ -256,7 +248,7 @@
             }
 
             .card1 {
-                width: 195px;
+                width: 250px;
                 height: 210px;
                 overflow: auto;
                 margin: auto;
@@ -266,73 +258,73 @@
             a{
                 color:white;
                 }
-                .shfooter .collapse {
+            .shfooter .collapse {
                 display: inherit;
-                }
+            }
                 @media (max-width:767px) {
-                .shfooter ul {
+            .shfooter ul {
                     margin-bottom: 0;
-                }
+            }
 
-                .shfooter .collapse {
+            .shfooter .collapse {
                     display: none;
-                }
+            }
 
-                .shfooter .collapse.show {
+            .shfooter .collapse.show {
                     display: block;
-                }
+            }
 
-                .shfooter .title .fa-angle-up,
-                .shfooter .title[aria-expanded=true] .fa-angle-down {
+            .shfooter .title .fa-angle-up,
+            .shfooter .title[aria-expanded=true] .fa-angle-down {
                     display: none;
-                }
+            }
 
-                .shfooter .title[aria-expanded=true] .fa-angle-up {
+            .shfooter .title[aria-expanded=true] .fa-angle-up {
                     display: block;
-                }
+            }
 
-                .shfooter .navbar-toggler {
+            .shfooter .navbar-toggler {
                     display: inline-block;
                     padding: 0;
-                }
+            }
 
-                }
+            }
 
-                .resize {
+            .resize {
                 text-align: center;
-                }
-                .resize {
+            }
+            .resize {
                 margin-top: 3rem;
                 font-size: 1.25rem;
-                }
-                /*RESIZESCREEN ANIMATION*/
-                .fa-angle-double-right {
+            }
+            /*RESIZESCREEN ANIMATION*/
+            .fa-angle-double-right {
                 animation: rightanime 1s linear infinite;
-                }
+            }
 
-                .fa-angle-double-left {
+            .fa-angle-double-left {
                 animation: leftanime 1s linear infinite;
-                }
-                @keyframes rightanime {
+            }
+            @keyframes rightanime {
                 50% {
                     transform: translateX(10px);
                     opacity: 0.5;
-                }
+            }
                 100% {
                     transform: translateX(10px);
                     opacity: 0;
-                }
-                }
-                @keyframes leftanime {
+            }
+            }
+            @keyframes leftanime {
                 50% {
                     transform: translateX(-10px);
                     opacity: 0.5;
-                }
+            }
                 100% {
                     transform: translateX(-10px);
                     opacity: 0;
-                }
-                }
+            }
+            }
 
             /* Contact Chip */
 
@@ -364,6 +356,33 @@
             transform: scale(1.4); 
             }
 
+        </style>
+  </head>
+
+    <body>
+
+        <!-- Back-to-Top and Back Button -->
+
+        <a data-toggle="tooltip" title="Back-To-Top" class="top-link hide" href="" id="js-top">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6"><path d="M12 6H0l6-6z"/></svg>
+            <span class="screen-reader-text">Back to top</span>
+        </a>
+
+        <!-- Eto yung navbar -->
+<style>
+
+.text1 {
+    font-size: 2.5rem;
+}
+
+.text2 {
+    font-size: 1.1rem;
+}
+
+.picture {
+    width: 100px;
+    height: auto;
+}
 
         </style>
   </head>
