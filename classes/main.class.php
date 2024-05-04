@@ -1443,9 +1443,8 @@ public function create_travelpermit() {
      //------------------------------------------ CERT OF INIDIGENCY CRUD -----------------------------------------------
 
      public function create_certofindigency() {
-
         if(isset($_POST['create_certofindigency'])) {
-            $id_indigency = $_POST['id_indigency'];
+            // Retrieve form field values
             $id_resident = $_POST['id_resident'];
             $lname = $_POST['lname'];
             $fname = $_POST['fname'];
@@ -1457,21 +1456,22 @@ public function create_travelpermit() {
             $municipal = $_POST['municipal'];
             $purpose = $_POST['purpose'];
             $date = $_POST['date'];
-
+    
+            // Prepare and execute the SQL query
             $connection = $this->openConn();
-            $stmt = $connection->prepare("INSERT INTO tbl_indigency (`id_indigency`, `id_resident`, `lname`, `fname`, `mi`,
-             `nationality`, `houseno`, `street`,`brgy`, `municipal`,`purpose`, `date`)
-            VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
-
-            $stmt->execute([$id_indigency, $id_resident, $lname, $fname, $mi,  $nationality, $houseno,  $street, $brgy, $municipal,$purpose, $date]);
-
+            $stmt = $connection->prepare("INSERT INTO tbl_indigency (`id_resident`, `lname`, `fname`, `mi`,
+             `nationality`, `houseno`, `street`, `brgy`, `municipal`, `purpose`, `date`)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    
+            $stmt->execute([$id_resident, $lname, $fname, $mi, $nationality, $houseno, $street, $brgy, $municipal, $purpose, $date]);
+    
+            // Handle success message and redirection
             $message2 = "Application Applied!";
             echo "<script type='text/javascript'>alert('$message2');</script>";
             header("refresh: 0");
         }
-        
-        
     }
+    
 
     public function create_certofindigency_walkin() {
 
