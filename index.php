@@ -804,7 +804,7 @@ nav {
     display: none;
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    right: 50px;
     z-index: 99;
     border: none;
     outline: none;
