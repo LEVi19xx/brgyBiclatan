@@ -149,7 +149,7 @@ form {
     top: 50%;
     transform: translateY(-50%);
     color: #999;
-    font-size: 14px;
+    font-size: 18px;
     transition: .3s;
 }
 
@@ -194,7 +194,7 @@ form {
     outline: none;
     background: none;
     padding: 0.5rem 0.7rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #555;
     font-family: 'poppins', sans-serif;
 }
