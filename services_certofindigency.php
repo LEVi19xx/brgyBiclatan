@@ -374,7 +374,7 @@
             <div class="logo">
             <a href="#"><img src="assets/goloo.png" alt="logo" height="60px" /></a>
           </div>
-            <a class="navbar-brand" href="resident_homepage.php" style="margin-left:10px"><b>Barangay Biclatan Information System</b></a>
+            <a class="navbar-brand" href="resident_homepage.php" style="margin-left:10px"><b>Biclatan InfoSystem</b></a>
             <a href="resident_homepage.php" style="margin-left:200px; font-size: 18px; font-weight:bold;">HOME</a>
             <a href="#down3" style="margin-left:30px; font-size: 18px; font-weight:bold;">PROCEDURE</a>
             <a href="#down1" style="margin-left:30px; font-size: 18px; font-weight:bold;">REGISTRATION</a>
@@ -391,7 +391,7 @@
             </div>
         </nav>
 
-        <div class="container-fluid container1"> 
+        <div class="container-fluid container1" style="background-color: #ececec;"> 
             <div class="row"> 
                 <div class="col"> 
                     <div class="header">
@@ -662,7 +662,7 @@
                 
                         <!-- Modal Footer -->
                         
-                        <div class="modal-footer" style="justify-content: flex-start; margin-left:100px;">
+                        <div class="modal-footer" style="justify-content: flex-start; margin-left:100px; width: 100%; border: none;">
                             <div class="paa">
                                 <input name="id_resident" type="hidden" class="form-control" value="<?= $userdetails['id_resident']?>">
                                 <button name="create_certofindigency" type="submit" class="btn btn-primary">Submit Request</button>
