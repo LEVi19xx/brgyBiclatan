@@ -786,10 +786,15 @@ nav {
 
 .contact-box p {
   margin-bottom: 5px;
-  font-size: 20px;
+  font-size: 25px;
   color: black;
 }
-
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .contact-box p {
+    font-size: 20px; /* Adjust font size for smaller screens */
+  }
+}
 /* Media Query for smaller screens */
 @media screen and (max-width: 600px) {
   .contact-box {
