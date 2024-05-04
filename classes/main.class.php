@@ -1737,36 +1737,26 @@ public function create_travelpermit() {
     //-------------------------------------------------------------------------------------------------------------
 
     public function create_bspermit() {
-
         if(isset($_POST['create_bspermit'])) {
-            $id_bspermit = $_POST['id_bspermit'];
-            $id_resident = $_POST['id_resident'];
-            $lname = $_POST['lname'];
-            $fname = $_POST['fname'];
-            $mi = $_POST['mi'];
-            $bsname = $_POST['bsname']; 
-            $houseno = $_POST['houseno'];
-            $street = $_POST['street'];
-            $brgy = $_POST['brgy'];
-            $municipal = $_POST['municipal'];
-            $bsindustry = $_POST['bsindustry'];
-            $aoe = $_POST['aoe'];
-
-
+            // Generate a unique identifier for id_bspermit
+            $id_bspermit = uniqid(); // You can use other methods to generate a unique ID
+    
+            // Rest of your code to fetch other form fields
+    
+            // Prepare and execute the SQL query
             $connection = $this->openConn();
             $stmt = $connection->prepare("INSERT INTO tbl_bspermit (`id_bspermit`, `id_resident`, `lname`, `fname`, `mi`,
              `bsname`, `houseno`, `street`,`brgy`, `municipal`, `bsindustry`, `aoe`)
             VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
+    
             $stmt->execute([$id_bspermit, $id_resident, $lname, $fname, $mi,  $bsname, $houseno,  $street, $brgy, $municipal, $bsindustry, $aoe]);
-
+    
             $message2 = "Application Applied!";
             echo "<script type='text/javascript'>alert('$message2');</script>";
             header("refresh: 0");
         }
-        
-        
     }
+    
     
      public function create_bspermit_walkin() {
 
