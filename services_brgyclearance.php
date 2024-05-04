@@ -434,7 +434,7 @@
     </div>
 </nav>
 
-        <div class="container-fluid container1"> 
+        <div class="container-fluid container1"  style="height:450px; background-color: #ececec;"> 
             <div class="row"> 
                 <div class="col"> 
                     <div class="header">
@@ -460,7 +460,7 @@
         <br>
         
 
-        <div class="container text-center" style="height:450px; background-color: #ececec;">
+        <div class="container text-center">
             <div class="row">
                 <div class="col">
                     
