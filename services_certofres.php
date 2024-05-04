@@ -445,13 +445,11 @@
 
                     <br>
 
-                    <img class="picture" src="icons/Documents/docu1.png">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img class="picture" src="icons/Documents/docu3.png">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img class="picture" src="icons/Documents/docu2.png">
+                    <div class="d-flex justify-content-center">
+                <img class="picture" src="icons/Documents/docu1.png" alt="Document 1">&nbsp;
+                <img class="picture" src="icons/Documents/docu3.png" alt="Document 3">&nbsp;
+                <img class="picture" src="icons/Documents/docu2.png" alt="Document 2">&nbsp;
+            </div>
                 </div>
             </div>
         </div>
