@@ -1456,7 +1456,7 @@ nav {
     .service__grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
+}
     </style>
 
       <section class="location__container location_container" id="location">
@@ -1493,7 +1493,7 @@ nav {
   }
 }
 
-      </style>
+</style>
 
 
 
