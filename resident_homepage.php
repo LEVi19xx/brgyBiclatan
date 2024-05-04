@@ -441,7 +441,7 @@
                 </div>
                 
                 <div class="col"> 
-                    <a href="services_certofindigency.php">
+                    <a href="services_certofindigency.php?id_resident=<?= $userdetails['id_resident'];?>">
                         <div class="zoom1">
                             <div class="card"> 
                                 <div class="card-body text-center"> 
@@ -457,7 +457,7 @@
             <br>
             <div class="row card-spacing"> 
                 <div class="col">
-                    <a href="services_certofres.php"> 
+                    <a href="services_certofres.php?id_resident=<?= $userdetails['id_resident'];?>"> 
                     <div class="zoom1">    
                         <div class="card"> 
                             <div class="card-body text-center"> 
@@ -470,7 +470,7 @@
                 </div>
 
                 <div class="col">
-                    <a href="services_brgyclearance.php"> 
+                    <a href="services_brgyclearance.php?id_resident=<?= $userdetails['id_resident'];?>"> 
                     <div class="zoom1">    
                         <div class="card"> 
                             <div class="card-body text-center">
@@ -483,7 +483,7 @@
                 </div>
 
                 <div class="col">
-                    <a href="services_blotter.php"> 
+                    <a href="services_blotter.php?id_resident=<?= $userdetails['id_resident'];?>"> 
                     <div class="zoom1">    
                         <div class="card"> 
                             <div class="card-body text-center">
