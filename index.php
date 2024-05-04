@@ -616,7 +616,7 @@ nav {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .footer__link a {
