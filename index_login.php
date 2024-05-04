@@ -336,6 +336,14 @@ a:hover{
         transform: scale(0.5); /* Adjust the scale as needed */
     }
 }
+
+.eye-icon {
+        position: absolute;
+        left: 400px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
     </style>
 <body>
     <img class="wave" src="assets/newheader.jpg">
