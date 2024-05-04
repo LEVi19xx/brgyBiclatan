@@ -274,6 +274,8 @@ a:hover{
     margin: 1rem 0;
     cursor: pointer;
     transition: .5s;
+    text-align: center; /* Center the text horizontally */
+    line-height: 40px; /* Vertically center the text */
 }
 .btn2:hover{
     background-position: right;
