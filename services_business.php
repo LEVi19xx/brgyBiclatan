@@ -640,19 +640,7 @@
         <br>
         <br>
         <br>
-<style>
- #footer {
-        width: 100%;
-        bottom: 0;
-        position: relative;
-    }
 
-    @media (max-width: 768px) {
-        #footer {
-            position: absolute;
-        }
-    }
-</style>
 
         <!-- Footer -->
 
