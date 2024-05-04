@@ -1969,9 +1969,8 @@ public function create_travelpermit() {
 
 
     public function create_blotter() {
-
         if(isset($_POST['create_blotter'])) {
-            $id_blotter = $_POST['id_blotter'];
+            // Retrieve form field values
             $id_resident = $_POST['id_resident'];
             $lname = $_POST['lname'];
             $fname = $_POST['fname'];
@@ -1982,19 +1981,22 @@ public function create_travelpermit() {
             $municipal = $_POST['municipal'];
             $contact = $_POST['contact'];
             $narrative = $_POST['narrative'];
-
+    
+            // Prepare and execute the SQL query
             $connection = $this->openConn();
-            $stmt = $connection->prepare("INSERT INTO tbl_blotter (`id_blotter`, `id_resident`, `lname`, `fname`, `mi`,
+            $stmt = $connection->prepare("INSERT INTO tbl_blotter (`id_resident`, `lname`, `fname`, `mi`,
             `houseno`, `street`,`brgy`, `municipal`, `contact`, `narrative`)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
-            $stmt->execute([$id_blotter, $id_resident, $lname, $fname, $mi, $houseno,  $street, $brgy, $municipal, $contact, $narrative]);
-
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    
+            $stmt->execute([$id_resident, $lname, $fname, $mi, $houseno,  $street, $brgy, $municipal, $contact, $narrative]);
+    
+            // Handle success message and redirection
             $message2 = "Application Applied!";
             echo "<script type='text/javascript'>alert('$message2');</script>";
             header("refresh: 0");
         }  
     }
+    
 
 public function create_blotter_walkin() {
 
