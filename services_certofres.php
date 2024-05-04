@@ -379,26 +379,40 @@
 
         <!-- Eto yung navbar -->
 
-        <nav class="navbar navbar-dark bg-primary sticky-top">
-            <div class="logo">
-            <a href="#"><img src="assets/goloo.png" alt="logo" height="60px" /></a>
-          </div>
-            <a class="navbar-brand" href="resident_homepage.php" style="margin-left:10px"><b>Biclatan InfoSystem</b></a>
-            <a href="resident_homepage.php" style="margin-left:200px; font-size: 18px; font-weight:bold;">HOME</a>
-            <a href="#down3" style="margin-left:30px; font-size: 18px; font-weight:bold;">PROCEDURE</a>
-            <a href="#down1" style="margin-left:30px; font-size: 18px; font-weight:bold;">REGISTRATION</a>
-           
-            <div class="dropdown ml-auto">
-                <button title="Your Account" class="btn btn-primary dropdown-toggle" style="margin-right: 2px;" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
-                    <span class="caret" style="margin-left: 2px;"></span>
-                </button>
-                <ul class="dropdown-menu" style="width: 175px;" >
-                    <a class="btn" href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-user"> &nbsp; </i>Personal Profile  </a>
-                    <a class="btn" href="resident_changepass.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-lock" >&nbsp;</i> Change Password  </a>
-                    <a class="btn" href="logout.php"> <i class="fas fa-sign-out-alt">&nbsp;</i> Logout  </a>
-                </ul>
-            </div>
-        </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="logo">
+        <a href="#"><img src="assets/goloo.png" alt="logo" height="60px" /></a>
+    </div>
+    <a class="navbar-brand" href="resident_homepage.php"><b>Biclatan InfoSystem</b></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="resident_homepage.php" class="nav-link">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a href="#down3" class="nav-link">PROCEDURE</a>
+            </li>
+            <li class="nav-item">
+                <a href="#down1" class="nav-link">REGISTRATION</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="dropdown ml-auto">
+        <button title="Your Account" class="btn btn-primary dropdown-toggle" style="margin-right: 2px;" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
+            <span class="caret" style="margin-left: 2px;"></span>
+        </button>
+        <ul class="dropdown-menu" style="width: 175px;">
+            <li><a class="dropdown-item" href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-user"></i> &nbsp; Personal Profile</a></li>
+            <li><a class="dropdown-item" href="resident_changepass.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-lock"></i>&nbsp; Change Password</a></li>
+            <li><a class="dropdown-item" href="logout.php"> <i class="fas fa-sign-out-alt"></i>&nbsp; Logout</a></li>
+        </ul>
+    </div>
+</nav>
 
         <div class="container-fluid container1" style="height:450px; background-color: #ececec;"> 
             <div class="row"> 
