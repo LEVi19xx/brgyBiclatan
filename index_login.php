@@ -372,7 +372,7 @@ a:hover{
                 <hr><br>
                 <h4 style="font-size: 18px;"><b>Haven't registered yet?</b></h4>
                 <h5 style="font-weight: lighter; font-size: 15px;">Hindi ka pa rehistrado?</h5>
-                <button class="btn2" onclick="trying();">Create Account</button>
+                <a href="resident_registration.php" class="btn2">Create Account</a>
             </form>
         </div>
     </div>
@@ -398,10 +398,5 @@ inputs.forEach(input => {
     input.addEventListener("focus", addcl);
     input.addEventListener("blur", remcl);
 });
-</script>
-<script>
-function trying() {
-        window.location.href = "resident_registration.php";
-    }
 </script>
 </html>
