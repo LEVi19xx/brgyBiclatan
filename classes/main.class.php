@@ -1562,9 +1562,8 @@ public function create_travelpermit() {
      //------------------------------------------ BRGY CLEARANCE CRUD -----------------------------------------------
 
      public function create_brgyclearance() {
-
         if(isset($_POST['create_brgyclearance'])) {
-            $id_clearance = $_POST['id_clearance'];
+            // Retrieve form field values
             $id_resident = $_POST['id_resident'];
             $lname = $_POST['lname'];
             $fname = $_POST['fname'];
@@ -1577,21 +1576,21 @@ public function create_travelpermit() {
             $status = $_POST['status'];
             $age = $_POST['age'];
             
+            // Prepare and execute the SQL query
             $connection = $this->openConn();
-            $stmt = $connection->prepare("INSERT INTO tbl_clearance (`id_clearance`, `id_resident`, `lname`, `fname`, `mi`,
-             `purpose`, `houseno`, `street`,`brgy`, `municipal`, `status`, `age`)
-            VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
-            $stmt->execute([$id_clearance, $id_resident, $lname, $fname, $mi,  $purpose, 
-            $houseno,  $street, $brgy,   $municipal, $status, $age]);
-
+            $stmt = $connection->prepare("INSERT INTO tbl_clearance (`id_resident`, `lname`, `fname`, `mi`,
+             `purpose`, `houseno`, `street`, `brgy`, `municipal`, `status`, `age`)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    
+            $stmt->execute([$id_resident, $lname, $fname, $mi, $purpose, $houseno, $street, $brgy, $municipal, $status, $age]);
+    
+            // Handle success message and redirection
             $message2 = "Application Applied!";
             echo "<script type='text/javascript'>alert('$message2');</script>";
             header("refresh: 0");
         }
-        
-        
     }
+    
 
     public function create_brgyclearance_walkin() {
 
