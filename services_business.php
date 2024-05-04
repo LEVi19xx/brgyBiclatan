@@ -1,6 +1,4 @@
 <?php 
-    ini_set('display_errors', 1);
-    error_reporting(E_ALL ^ E_WARNING);
     require('classes/main.class.php');
     require('classes/resident.class.php');
     
