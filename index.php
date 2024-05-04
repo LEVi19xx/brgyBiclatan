@@ -1,13 +1,3 @@
-<? php
-    error_reporting(E_ALL ^ E_WARNING);
-    ini_set('display_errors',1);
-
-    //include('autoloader.php');
-    require('classes/conn.php');
-    require('classes/main.class.php');
-    require('classes/staff.class.php');
-    require('classes/info.class.php');
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,72 +9,970 @@
     />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Barangay Biclatan Information System</title>
-    <style>
-      .info__box {
-        background-color: rgba(240, 240, 240, 0.7); /* Background color with lower opacity */
-        border-radius: 10px; /* Rounded corners */
-        padding: 20px; /* Padding around content */
-        width: 870px; /* Set width to fit content */
-        height: 220px;
-        text-align: center; /* Center text */
-        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.9); /* Box shadow */
-      }
+    <title>Bicatan Info System</title>
+  </head>
 
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap");
 
-      .about__container {
-    display: flex;
-    align-items: center;
+:root {
+  --primary-color: #2f2f2f;
+  --text-dark: #18181b;
+  --text-light: #71717a;
+  --white: #ffffff;
+  --max-width: 1200px;
+  --header-font: "Lora", serif;
 }
-      .about__content {
-        flex: 1 1 50%;
-        padding: 0 20px;
-        text-align: left;
-      }
 
-      @media (max-width: 768px) {
-        .about__container {
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-        }
-      }
-
-      /* Scroll to top button styles */
-      #scrollTopBtn {
-        display: none;
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 99;
-        border: none;
-        outline: none;
-        background-color: rgba(17, 43, 90, 0.7);
-        color: white;
-        cursor: pointer;
-        padding: 15px;
-        border-radius: 100%;
-        transition: background-color 0.3s ease;
-        font-size: 40px; /* Adjust the size as needed */
-      }
-
-      #scrollTopBtn:hover {
-        background-color: rgba(17, 43, 90, 0.9);
-      }
-      .section__description {
-    text-align: justify;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
+
+.section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 10rem 2rem;
+}
+
+.section__header {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: var(--header-font);
+  color: var(--text-dark);
+}
+
+.section__subheader {
+  color: var(--text-light);
+  text-align: justify;
+}
+
+
+.btn {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-radius: 5rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--text-dark);
+}
+
+img {
+  display: flex;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.2)
+    ),
+    url("assets/newheader.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+nav {
+  max-width: 100%; /* Set max-width to 100% */
+  margin: auto;
+  padding: .1rem 4rem; /* Adjust padding as needed */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #007bff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0; /* Stretch horizontally */
+  z-index: 999; /* Ensure it's above other content */
+}
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+  nav {
+    padding: .1rem 1rem; /* Adjust padding for smaller screens */
+  }
+
+  .nav__menu__btn {
+    display: block; /* Show the menu button on smaller screens */
+    font-size: 1.5rem;
+    color: var(--white);
+  }
+
+  .nav__links {
+    position: absolute; /* Position the links dropdown */
+    top: 68px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: 0.5s;
+    background-color: #007bff;
+    justify-content: flex-end; /* Align items to the end */
+  }
+
+  .nav__links .link a {
+    opacity: 0;
+  }
+
+  .nav__links.open .link a {
+    opacity: 1;
+  }
+
+  .nav__links.open {
+    transform: scaleY(1);
+  }
+}
+.nav__logo {
+  flex: 1;
+}
+
+.nav__logo a {
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: var(--header-font);
+  color: var(--white);
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.link a {
+  position: relative;
+  padding: 10px 0;
+  color: var(--white);
+  transition: 0.3s;
+}
+
+.link a::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 2px;
+  width: 0;
+  background-color: var(--white);
+  transition: 0.3s;
+}
+
+.link a:hover::after {
+  width: 100%;
+}
+
+.nav__menu__btn {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--white);
+}
+
+.nav__actions {
+  flex: 0.5;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+.nav__actions span {
+  font-size: 1.2rem;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.header__container {
+  text-align: center;
+  color: var(--white);
+}
+
+.header__container h1 {
+  margin-bottom: 1rem;
+  font-size: 4.5rem;
+  font-weight: 600;
+  font-family: var(--header-font);
+}
+
+.header__container p {
+  max-width: 600px;
+  margin-inline: auto;
+  margin-bottom: 4rem;
+  font-size: 1.2rem;
+}
+
+.header__container form {
+  width: 100%;
+  max-width: 350px;
+  margin-inline: auto;
+  margin-bottom: 4rem;
+  padding-block: 0.25rem;
+  padding-inline: 1.25rem 0.25rem;
+  display: flex;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--white);
+  border-radius: 5rem;
+}
+
+.header__container input {
+  width: 100%;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--white);
+  background-color: transparent;
+}
+
+.header__container input::placeholder {
+  color: var(--white);
+}
+
+.header__container button {
+  padding: 11px 12px;
+  font-size: 1.25rem;
+  outline: none;
+  border: none;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.header__container a {
+  display: inline-block;
+  padding: 0 12px;
+  font-size: 3rem;
+  color: var(--white);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--white);
+  border-radius: 100%;
+}
+.choose__container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  margin-left: 8%; /* Adjust as needed */
+  margin-right: 0%; /* Adjust as needed */
+}
+
+.choose__container .choose__bg {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-3rem);
+  max-width: 300px;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+.choose__grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 1rem;
+}
+
+.choose__card span {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  padding: 5px 10px;
+  font-size: 1.25rem;
+  background-color: #cad8d8;
+  border-radius: 100%;
+}
+
+.choose__card h4 {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: var(--header-font);
+  color: var(--text-dark);
+}
+
+.choose__card p {
+  color: var(--text-light);
+}
+
+.choose__image img {
+  max-width: 60%;
+  margin: auto;
+  border: none; /* Remove the border */
+}
+
+.nav__logo a {
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: var(--header-font);
+  color: var(--white);
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .choose__container {
+    grid-template-columns: 1fr; /* Change to single column layout on smaller screens */
+    margin-left: 0px; /* Adjust margin for smaller screens */
+    margin-right: 0px; /* Adjust margin for smaller screens */
+  }
+
+  .choose__container .choose__bg {
+    display: none; /* Hide background image on smaller screens */
+  }
+}
+
+
+.offer__container {
+  padding-block: 5rem;
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, var(--max-width))
+    minmax(0, 1fr);
+  row-gap: 2rem;
+}
+
+.offer__grid__top {
+  grid-column: 1/3;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.offer__grid__bottom {
+  grid-column: 2/4;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.offer__container img {
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.offer__content {
+  padding-right: 1rem;
+}
+
+.offer__content .section__subheader {
+  margin-bottom: 2rem;
+}
+
+.craft__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.craft__container .section__subheader {
+  margin-bottom: 2rem;
+}
+
+.craft__image {
+  position: relative;
+  isolation: isolate;
+}
+
+.craft__image::before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: #ebf1f1;
+  border-radius: 15px;
+  transition: 0.3s;
+  z-index: -1;
+}
+
+.craft__image:hover::before {
+  height: 80%;
+}
+
+.craft__image__content {
+  padding-bottom: 2rem;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.craft__image__content img {
+  margin-bottom: 1rem;
+  max-width: 250px;
+  margin: auto;
+}
+
+.craft__image__content p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.craft__image__content h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.craft__image:hover .craft__image__content {
+  transform: translateY(-2rem);
+}
+
+.craft__image a {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translate(-50%, 50%);
+  padding: 0 7px;
+  font-size: 1.75rem;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-radius: 100%;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.craft__image:hover a {
+  opacity: 1;
+}
+
+
+.testimonial__container .section__header {
+  text-align: center;
+}
+
+.swiper {
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+  width: 100%;
+}
+
+.testimonial__card {
+  max-width: 900px;
+  margin: auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.testimonial__card p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: var(--text-dark);
+}
+
+.testimonial__card img {
+  max-width: 300px;
+  margin-inline: auto;
+  margin-bottom: 1rem;
+  border-radius: 100%;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial__card h4 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.testimonial__card h5 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+.blog__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.blog__card img {
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.blog__card h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.blog__card p {
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.blog__card p span {
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-light);
+}
+
 .footer {
   background-color: #007bff;
+  padding-top: 10px;
+}
+
+.footer__container {
+  padding: 0px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5rem; /* Reduced the gap */
+  align-items: center;
+  border-bottom: 1px solid var(--white);
+}
+
+.footer__form form {
+  width: 100%;
+  max-width: 400px; /* Reduced max-width */
+  margin-inline: auto;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--white);
+  border-radius: 10px;
+}
+
+.footer__content h4 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 2.5rem;
+  color: var(--white);
+}
+
+.footer__content p {
+  color: var(--white);
+}
+
+.footer__form form {
+  width: 100%;
+  max-width: 600px;
+  margin-inline: auto;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--white);
+  border-radius: 10px;
+}
+
+
+
+.footer__bar {
+  padding-block: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer__logo h4 a {
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: var(--header-font);
+  color: var(--white);
+}
+
+.footer__logo p {
+  margin-top: 5px;
+  font-size: 0.8rem;
+  color: var(--white);
+}
+
+.footer__nav {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer__link a {
+  font-weight: 500;
+  color: var(--white);
+  white-space: nowrap;
+}
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+  .footer__container {
+    grid-template-columns: 1fr; /* Change to a single column layout */
+    gap: 3rem; /* Adjust gap */
+    padding: 0 20px; /* Add padding to the sides */
+  }
+
+  .footer__form form {
+    max-width: 100%; /* Adjust max-width to fill the container */
+  }
+}
+@media (width < 1200px) {
+  .offer__container {
+    row-gap: 1rem;
+  }
+
+  .offer__grid__top,
+  .offer__grid__bottom {
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .offer__grid__top img:first-child,
+  .offer__grid__bottom img:first-child {
+    display: none;
+  }
+
+  .craft__container {
+    gap: 1rem;
+  }
+}
+
+@media (width < 900px) {
+  .nav__actions {
+    display: none;
+  }
+
+  .choose__container {
+    grid-template-columns: repeat(1, 1fr);
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .choose__container .choose__bg {
+    left: 0;
+    transform: translateX(0);
+  }
+
+  .choose__image {
+
+  }
+
+  .offer__grid__top,
+  .offer__grid__bottom {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .offer__grid__top img:nth-child(2),
+  .offer__grid__bottom img:nth-child(4) {
+    display: none;
+  }
+
+  .craft__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .modern__container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 4rem;
+  }
+
+  .blog__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .footer__container {
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+  }
+}
+
+@media (width < 600px) {
+  nav {
+    position: fixed;
+    width: 100%;
+    padding: 1rem;
+    background-color: #007bff;
+    z-index: 99;
+  }
+
+ .nav__links {
+  position: absolute;
+  top: 100px;
+  padding: 2rem;
+  width: 100%;
+  flex-direction: column;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 0.5s;
+   background-color: rgba(0, 123, 255, 0.9); /* Adjusted background color with opacity */
+  justify-content: flex-end; /* Align items to the end */
+}
+
+.nav__links .link a {
+  opacity: 0;
+}
+
+.nav__links.open .link a {
+  opacity: 1;
+}
+
+.nav__links.open {
+  transform: scaleY(1);
+}
+
+  .nav__menu__btn {
+    display: block;
+  }
+
+  .header__container h1 {
+    margin-top: 4rem;
+    font-size: 3.5rem;
+  }
+
+  .offer__grid__top,
+  .offer__grid__bottom {
+    padding-inline: 1rem;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .blog__grid {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 2rem;
+  }
+
+  .footer__bar {
+    flex-direction: column;
+  }
+}
+.contact-box {
+  background-color: rgba(240, 240, 240, 0.6); /* Reduced opacity */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  height: 280px; /* Adjusted height */
+  overflow-y: auto; /* Added overflow-y for scrolling if content exceeds height */
+}
+
+.contact-box h2 {
+  margin-bottom: 15px;
+  color: black;
+}
+
+.contact-box p {
+  margin-bottom: 5px;
+  font-size: 25px;
+  color: black;
+}
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 600px) {
+  .contact-box {
+    width: 100%;
+    padding: 10px;
+    height: auto; /* Set height to auto for smaller screens */
+  }
+}
+
+/* Scroll to top button styles */
+#scrollTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: rgba(17, 43, 90, 0.7);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 100%;
+    transition: background-color 0.3s ease;
+    font-size: 40px; /* Adjust the size as needed */
+}
+
+#scrollTopBtn:hover {
+    background-color: rgba(17, 43, 90, 0.9);
+}
+
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    #scrollTopBtn {
+        font-size: 30px;
+        bottom: 10px;
+        right: 10px;
+        padding: 10px;
+    }
+}
+
+@media (width > 576px) {
+  .service__card {
+    flex-direction: row;
+  }
+
+  .service__card img {
+    max-width: 200px;
+  }
+
+  .offer__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .offer__header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .offer__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.service__grid {
+  margin-top: 4rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.service__card {
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  border-radius: 2px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.service__card:hover {
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service__card img {
+  max-width: 300px;
+  margin: auto;
+  border-radius: 2px;
+}
+
+.service__card > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.service__card h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.service__card p {
+  margin-bottom: 0.5rem;
+  color: var(--text-light);
+}
+
+.service__btn {
+  text-align: right;
+}
+
+.offer__header {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+}
+
+.offer__header a {
+  color: var(--primary-color);
+  transition: 0.3s;
+}
+
+.offer__header a:hover {
+  color: var(--primary-color-dark);
+}
+
+.offer__grid {
+  margin-top: 4rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.offer__card {
+  padding: 1rem;
+  border-radius: 2px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+/*.activity__item {
+  flex-basis: 30%; 
+  margin-right: 10px; 
+}*/
+
+.offer__card:hover {
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.offer__card img {
+  margin-bottom: 1rem;
+  border-radius: 2px;
+}
+
+.offer__card h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.offer__card p {
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+.offer__card > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.offer__card span {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-color);
 }
 /* Add custom CSS styles for table */
 .table {
     width: 100%;
     margin-bottom: 1rem;
     color: #212529; /* Text color */
+    overflow-x: auto; /* Allow horizontal scrolling */
 }
 
 .table th,
@@ -130,7 +1018,7 @@
 .table-responsive {
     display: block;
     width: 100%;
-    overflow-x: auto;
+    overflow-x: auto; /* Allow horizontal scrolling */
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
 }
@@ -142,40 +1030,40 @@
     border-color: #dee2e6; /* Header border color */
 }
 
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .table-responsive {
+        overflow-x: auto;
+    }
+}
 
 
-    </style>
 
-  </head>
+  </style>
   <body>
     <header class="header">
       <nav>
-        <div class="nav__bar">
-          <div class="logo">
-            <a href="#"><img src="assets/golo.png" alt="logo" height="70px" /></a>
+        <div class="logo">
+            <a href="#"><img src="assets/goloo.png" alt="logo" height="70px" /></a>
           </div>
-          <span class="logo__text"><b>BICLATAN INFORMATION SYSTEM</b></span>
-          <div class="nav__menu__btn" id="menu-btn">
-            <i class="ri-menu-line"></i>
-          </div>
-        </div>
+        <div class="nav__logo"><a href="#">Biclatan InfoSystem</a></div>
         <ul class="nav__links" id="nav-links">
-          <li><a href="#home">HOME</a></li>
-          <li><a href="#about">ABOUT</a></li>
-          <li><a href="#service">SERVICES</a></li>
-          <li><a href="#client">LOCATION</a></li>
-          <li><a href="#offer">ACTIVITIES</a></li>
-          <li><a href="index_login.php"><button class="btn">LOGIN</button></a></li>
+          <li class="link"><a href="#home">Home</a></li>
+          <li class="link"><a href="#choose">About</a></li>
+          <li class="link"><a href="#service">Services</a></li>
+          <li class="link"><a href="#location">Location</a></li>
+          <li class="link"><a href="#blog">Activities</a></li>
+          <li class="link"><a href="index_login.php">LOGIN</a></li>
         </ul>
+        <div class="nav__menu__btn" id="menu-btn">
+          <span><i class="ri-menu-line"></i></span>
+        </div>
       </nav>
-      <hr />
       <div class="section__container header__container" id="home">
-        <h1 style="font-size: 80px;">
-          <br />Barangay Biclatan <br />Information System
-        </h1>
-        <br>
-        <div class="info__box">
-            <?php
+        <h1>Barangay Biclatan <br>Information System</h1><br><br>
+        <div class="contact-box">
+        <h2>Details</h2>
+        <?php
               require('classes/conn.php');
 
               // Assuming $id_brgy_info contains the ID of the barangay information
@@ -198,7 +1086,7 @@
                   $email = $row['email'];
                   $contact = $row['contact'];
 
-                  echo "<p style='font-size: 30px; color: black;'>";
+                  echo "<p>";
                   echo "$brgy, $municipal, $province<br />";
                   echo "$openhours<br />";
                   echo "$email | $contact<br />";
@@ -207,18 +1095,15 @@
                   echo "No content found for barangay information ID $id_brgy_info";
               }
           ?>
-          <hr />
-        </div>
+        <hr>
       </div>
-      <br />
+      </div>
     </header>
 
-    <section class="section__container about__container" id="about">
-      <div class="about__content">
-        <div style="display: flex; justify-content: space-between; margin-left: 120px;">
-          <div style="flex: 1;">
-            <br><br><br><h2 class="section__header">BACKGROUND of BARANGAY</h2>
-        <?php
+    <section class="section__container choose__container" id="choose">
+      <div class="choose__content">
+        <h2 class="section__header">Background of the Barangay</h2>
+          <?php
               require('classes/conn.php');
 
               // Assuming $id_brgy_info contains the ID of the barangay information
@@ -236,25 +1121,25 @@
               if ($row) {
                   $background = $row['background'];
 
-                  echo "<p class='section__description'>";
+                  echo "<p class='section__subheader'>";
                   echo "$background<br />";
                   echo "</p>";
               } else {
                   echo "No content found for barangay information ID $id_brgy_info";
               }
           ?>
-          </div>
-          <div class="about__image-left" style="margin-right: 90px;">
-            <br><img src="assets/golo1.png" alt="about" style="width:280px; height: 280px;" />
-          </div>
-        </div>
-       <div class="about__container">
-    <div class="about__image">
-        <br /><img src="assets/golo.png" alt="about" style="width:300px; height: 300px; margin-left: 80px;" />
-    </div>
-    <div class="about__content">
-        <br><h2 class="section__header">VISION</h2>
-            <?php
+      </div>
+      <div class="choose__image">
+        <img src="assets/goloo1.png" alt="choose" />
+      </div>
+      <div class="choose__image">
+        <img src="assets/goloo.png" alt="modern" class="modern__img-1" />
+      </div>
+      <div class="choose__content">
+        <br><h2 class="section__header">
+          VISION
+        </h2>
+        <?php
               require('classes/conn.php');
 
               // Assuming $id_brgy_info contains the ID of the barangay information
@@ -272,16 +1157,17 @@
               if ($row) {
                   $vision = $row['vision'];
 
-                  echo "<p class='section__description'>";
+                  echo "<p class='section__subheader'>";
                   echo "$vision<br />";
                   echo "</p>";
               } else {
                   echo "No content found for barangay information ID $id_brgy_info";
               }
-          ?>
-            <br />
-            <h2 class="section__header">MISSION</h2>
-            <?php
+          ?><br>
+        <h2 class="section__header">
+          MISSION
+        </h2>
+        <?php
               require('classes/conn.php');
 
               // Assuming $id_brgy_info contains the ID of the barangay information
@@ -299,19 +1185,18 @@
               if ($row) {
                   $mission = $row['mission'];
 
-                  echo "<p class='section__description'>";
+                  echo "<p class='section__subheader'>";
                   echo "$mission<br />";
                   echo "</p>";
               } else {
                   echo "No content found for barangay information ID $id_brgy_info";
               }
           ?>
+        </div>
+    </section>
 
-    </div>
-</div>
-<div class="container-fluid">
-    <br><br>
-    <center><h2 class="section__header">BARANGAY OFFICIALS</h2></center><br>
+    <section class="section__container testimonial__container" id="testimonial">
+      <h2 class="section__header">Barangay Officials</h2>
     <div class="table-responsive">
         <table class="table table-hover text-center table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead class="thead-light"> <!-- Use thead-light class for header styling -->
@@ -326,7 +1211,7 @@
 
                 try {
                     // Establish database connection
-                    $conn = new PDO('mysql:host=localhost;dbname=u792431185_bmis', 'u792431185_biclatan', 'brgyBiclatan24');
+                    $conn = new PDO('mysql:host=localhost;dbname=bmis', 'root', '');
 
                     // Set PDO error mode to exception
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -361,6 +1246,7 @@
 </div>
       </div>
     </section>
+  
 
     <section class="section__container service__container" id="service">
       <center><h2 class="section__header"><br>Our Services</h2>
@@ -373,7 +1259,7 @@
     require('classes/conn.php');
 
     // Assuming $id_services contains the ID of the service
-    $id_services = 6; // Example service ID
+    $id_services = 9; // Example service ID
 
     // Query the database to fetch the filename of the image associated with the service ID
     $sql = "SELECT image_service FROM tbl_services WHERE id_services = :id";
@@ -396,7 +1282,7 @@
 
     <div>
         <div>
-            <br><br><h4>BUSINESS CLEARANCE</h4>
+            <br><h4>BUSINESS CLEARANCE</h4>
             <p>
                 A business clearance is a permit allowing a business to operate legally within a specific area by meeting local regulations and requirements.
             </p>
@@ -430,7 +1316,7 @@
           ?>
           <div>
             <div>
-              <br><br><h4>BARANGAY CLEARANCE</h4>
+              <br><h4>BARANGAY CLEARANCE</h4>
               <p>
                 A barangay clearance is a document certifying a person's residence and good standing within a local community in the Philippines.
               </p>
@@ -465,7 +1351,7 @@
           ?>
           <div>
             <div>
-              <br><br><h4>CERTIFICATE OF INDIGENCY</h4>
+              <br><h4>CERTIFICATE OF INDIGENCY</h4>
               <p>
                 A document issued by a local government unit certifying that an individual or family is financially disadvantaged, often required for availing of social services or benefits.
               </p>
@@ -510,21 +1396,109 @@
       </div>
     </section>
 
-    <section class="client" id="client">
-      <div class="section__container client__container">
-        <center><br /><br /><h2 class="section__header">LOCATION</h2></center>
-        <p class="section__description">
-          <center>Biclatan Barangay Hall<br>
-          7WG8+QH6, Green Breeze Village, General Trias, Cavite
-        </p></center><br/>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.803085425483!2d120.91380297486442!3d14.276921184919763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd7fe85ac7b9e9%3A0x48fed9f90c1f68b7!2sBiclatan%20Barangay%20Hall!5e1!3m2!1sfil!2sph!4v1711619085743!5m2!1sfil!2sph" width="1200" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </section>
+   
+    <style>
+      .service__grid {
+  margin-top: 4rem;
+  display: grid;
+  gap: 1rem;
+}
 
-    <section class="section__container offer__container" id="offer">
-      <div class="offer__header">
-        <h2 class="section__header"><br /><br />Recent Activities</h2>
-      </div>
+.service__card {
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  border-radius: 2px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.service__card:hover {
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service__card img {
+  max-width: 300px;
+  margin: auto;
+  border-radius: 2px;
+}
+
+.service__card > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.service__card h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.service__card p {
+  margin-bottom: 0.5rem;
+  color: var(--text-light);
+}
+
+.service__btn {
+  text-align: right;
+}
+@media (width > 576px) {
+  .service__card {
+    flex-direction: row;
+  }
+
+  .service__card img {
+    max-width: 200px;
+  }
+    .service__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+    </style>
+
+      <section class="location__container location_container" id="location">
+        <center><h2 class="section__header"><br><br><br>Location</h2>
+          <p>Biclatan Barangay Hall
+7WG8+QH6, Green Breeze Village, General Trias, Cavite</p></center>
+<br>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29764.41689857513!2d120.89564494764015!3d14.279164304934103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd7fe85ac7b9e9%3A0x48fed9f90c1f68b7!2sBiclatan%20Barangay%20Hall!5e1!3m2!1sfil!2sph!4v1714840498332!5m2!1sfil!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </section>
+
+      <style>
+.location__container {
+  max-width: 100%;
+  margin: auto;
+  padding: 0 10%; /* Dagdag na padding sa kaliwa at kanan */
+}
+
+.location__container iframe {
+  width: 100%; /* Gawing responsive ang width */
+  height: 500px; /* default height */
+}
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+  .location__container iframe {
+    height: 300px; /* Adjust height for smaller screens */
+  }
+}
+
+/* Media Query for even smaller screens */
+@media screen and (max-width: 480px) {
+  .location__container iframe {
+    height: 200px; /* Further adjust height for very small screens */
+  }
+}
+
+      </style>
+
+
+
+    <section class="section__container blog_container" id="blog">
+      <h2 class="section__header">Recent Activities</h2>
       <div class="offer__grid">
         <div class="offer__card">
           <?php
@@ -604,143 +1578,40 @@
       </div>
     </section>
 
-
-    <footer class="footer" style="padding-left: 240px;">
+    <br><br><br><br><br><footer class="footer">
       <div class="section__container footer__container">
-        <div class="footer__col">
-          <div class="logo">
-            <h4><b>INFORMATION SYSTEM</b></h4>
-          </div>
-          <hr>
+        <div class="footer__content">
+          <h4>Barangay Biclatan, General Trias Cavite</h4>
           <p>
-            <b>Biclatan</b> is a barangay in the city of General Trias, in the province of Cavite.
+            Biclatan is a barangay in the city of General Trias, in the province of Cavite.
           </p>
-          <ul class="footer__socials">
-            <li>
-              <a href="https://web.facebook.com/p/Barangay-Biclatan-100069121909069/?locale=en_GB&_rdc=1&_rdr"><i class="ri-facebook-fill"></i></a>
-            </li>
-            <!--<li>
-              <a href="#"><i class="ri-instagram-line"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="ri-youtube-line"></i></a>
-            </li>-->
-          </ul>
         </div>
-        
-        <div class="footer__col" style="width: 200px; margin-left: 20px">
-          <h4>Contact Us</h4>
-          <ul class="footer__links">
-            <li style="color: #fff;">
-                <?php
-                  require('classes/conn.php');
-
-                  // Assuming $id_brgy_info contains the ID of the barangay information
-                  $id_brgy_info = 1; // Example barangay information ID
-
-                  // Query the database to fetch the contact information associated with the barangay information ID
-                  $sql = "SELECT contact FROM brgy_info WHERE id_brgy_info = :id";
-                  $stmt = $conn->prepare($sql);
-                  $stmt->bindParam(':id', $id_brgy_info);
-                  $stmt->execute();
-
-                  $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-                  // Output the contact information along with the phone icon
-                  if ($row) {
-                      $contact = $row['contact'];
-
-                      echo "<span>";
-                      echo "<i class='ri-phone-fill'></i></span> $contact<br />";
-                      echo "";
-                  } else {
-                      echo "No content found for barangay information ID $id_brgy_info";
-                  }
-                  ?>
-            </li>
-            <li style="color: #fff; font-size: 14px;">
-                <?php
-                  require('classes/conn.php');
-
-                  // Assuming $id_brgy_info contains the ID of the barangay information
-                  $id_brgy_info = 1; // Example barangay information ID
-
-                  // Query the database to fetch the contact information associated with the barangay information ID
-                  $sql = "SELECT email FROM brgy_info WHERE id_brgy_info = :id";
-                  $stmt = $conn->prepare($sql);
-                  $stmt->bindParam(':id', $id_brgy_info);
-                  $stmt->execute();
-
-                  $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-                  // Output the contact information along with the phone icon
-                  if ($row) {
-                      $email = $row['email'];
-
-                      echo "<span>";
-                      echo "<i class='ri-mail-line'></i></span> $email<br />";
-                      echo "";
-                  } else {
-                      echo "No content found for barangay information ID $id_brgy_info";
-                  }
-                  ?>
-            </li>
-            <li style="color: #fff; font-size: 14px;" >
-                <?php
-                  require('classes/conn.php');
-
-                  // Assuming $id_brgy_info contains the ID of the barangay information
-                  $id_brgy_info = 1; // Example barangay information ID
-
-                  // Query the database to fetch the contact information associated with the barangay information ID
-                  $sql = "SELECT brgy, municipal, province FROM brgy_info WHERE id_brgy_info = :id";
-                  $stmt = $conn->prepare($sql);
-                  $stmt->bindParam(':id', $id_brgy_info);
-                  $stmt->execute();
-
-                  $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-                  // Output the contact information along with the phone icon
-                  if ($row) {
-                      $brgy = $row['brgy'];
-                      $municipal = $row['municipal'];
-                      $province = $row['province'];
-
-                      echo "<span>";
-                      echo "<i class='ri-map-pin-2-fill'></i></span> $brgy, $municipal, $province<br />";
-                      echo "";
-                  } else {
-                      echo "No content found for barangay information ID $id_brgy_info";
-                  }
-                  ?>
-            </li>
-          </ul>
-        </div>
-        <!--<div class="footer__col">
-          <h4>Contact Us</h4>
-          <form action="/">
-            <input type="text" placeholder="Enter your message" />
-            <button class="btn">Send</button>
-          </form>
+        <div class="footer__form">
+           <ul class="footer__nav">
+          <li class="footer__link"><a href="#">brgybiclatan@gmail.com</a></li>
+          <li class="footer__link"><a href="#">046-509-1664</a></li>
+        </ul>
         </div>
       </div>
-      <div class="footer__bar">
-        Copyright © 2024 Information System. All rights reserved.
-      </div>-->
-      <div class="about__image" style="margin-left: 100px;">
-        <img src="assets/goloo.png" alt="about" style="width:200px; height: 200px; margin-left: 80px; margin-bottom: 10px;" />
-    </div>
+      <div class="section__container footer__bar">
+        <div class="footer__logo">
+          <h4><a href="#">Barangay Biclatan InfoSystem</a></h4>
+          <p>Copyright © 2024 Barangay Biclatan InfoSystem. All rights reserved.</p>
+        </div>
+       
+      </div>
     </footer>
-
     <!-- Scroll to top button -->
     <button id="scrollTopBtn" onclick="scrollToTop()">
       <i class="ri-arrow-up-s-line"></i>
     </button>
 
+
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="main.js"></script>
-    <script>
+  </body>
+  <script>
       // Function to scroll to the top of the page
       function scrollToTop() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -756,5 +1627,4 @@
         }
       };
     </script>
-  </body>
 </html>
