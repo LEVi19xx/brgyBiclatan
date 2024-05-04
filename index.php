@@ -1505,7 +1505,7 @@ nav {
 /* Media Query for even smaller screens */
 @media screen and (max-width: 480px) {
   .location__container iframe {
-    height: 200px; /* Further adjust height for very small screens */
+    height: 350px; /* Further adjust height for very small screens */
   }
 }
 
