@@ -52,4 +52,9 @@
     #content-wrapper {
         flex: 1;
     }
+    #footer {
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
 </style>
