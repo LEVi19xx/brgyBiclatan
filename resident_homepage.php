@@ -428,7 +428,7 @@
             
             <div class="row">
                 <div class="col"> 
-                    <a href="services_business.php">
+                    <a href="services_business.php?id_resident=<?= $userdetails['id_resident'];?>">
                         <div class="zoom1"> 
                             <div class="card"> 
                                 <div class="card-body text-center"> 
