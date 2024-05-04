@@ -257,6 +257,7 @@ a:hover{
 }
 .btn1:hover{
     background-position: right;
+    color: #fff;
 }
 .btn2{
     display: block;
