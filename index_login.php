@@ -149,7 +149,7 @@ form {
     top: 50%;
     transform: translateY(-50%);
     color: #999;
-    font-size: 18px;
+    font-size: 14px;
     transition: .3s;
 }
 
