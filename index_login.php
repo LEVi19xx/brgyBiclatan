@@ -372,7 +372,7 @@ a:hover{
                 <hr><br>
                 <h4 style="font-size: 18px;"><b>Haven't registered yet?</b></h4>
                 <h5 style="font-weight: lighter; font-size: 15px;">Hindi ka pa rehistrado?</h5>
-                <input type="submit" class="btn2" value="Create New Account"  onclick="trying();">
+                <button class="btn2" onclick="trying();">Create Account</button>
             </form>
         </div>
     </div>
