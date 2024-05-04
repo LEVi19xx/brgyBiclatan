@@ -618,12 +618,11 @@
                                         </div>
                                     </div>
                                 </div>
-                           
                         </div>
 
                         <!-- Modal Footer -->
             
-                        <div class="modal-footer" style="justify-content: flex-end; margin-left: 100px;">
+                        <div class="modal-footer" style="justify-content: flex-start;">
                             <div class="paa">
                                 <input name="id_resident" type="hidden" class="form-control" value="<?= $userdetails['id_resident']?>">
                                 <button name ="create_bspermit" type="submit" class="btn btn-primary">Submit Request</button>
