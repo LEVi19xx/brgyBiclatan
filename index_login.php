@@ -372,7 +372,7 @@ a:hover{
                 <hr><br>
                 <h4 style="font-size: 18px;"><b>Haven't registered yet?</b></h4>
                 <h5 style="font-weight: lighter; font-size: 15px;">Hindi ka pa rehistrado?</h5>
-                <input type="submit" class="btn2" value="Create New Account">
+                <input type="submit" class="btn2" value="Create New Account"  onclick="trying();">
             </form>
         </div>
     </div>
@@ -386,7 +386,9 @@ function addcl(){
     let parent = this.parentNode.parentNode;
     parent.classList.add("focus");
 }
-
+function trying() {
+        window.location.href = "resident_registration.php";
+    }
 function remcl(){
     let parent = this.parentNode.parentNode;
     if(this.value == ""){
