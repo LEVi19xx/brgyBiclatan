@@ -573,7 +573,7 @@
                                     </div>
 
                                             <!--<label> Barangay: </label>-->
-                                            <input type="hidden" class="form-control" name="brgy"  placeholder="Enter Barangay" value="<?= $userdetails['brgy'];?>"  required>\
+                                            <input type="hidden" class="form-control" name="brgy"  placeholder="Enter Barangay" value="<?= $userdetails['brgy'];?>"  required>
 
                                             <!--<label> Municipality: </label>-->
                                             <input type="hidden" class="form-control" name="municipal" placeholder="Enter Municipality" value="<?= $userdetails['municipal'];?>"  required>
@@ -640,7 +640,19 @@
         <br>
         <br>
         <br>
+<style>
+ #footer {
+        width: 100%;
+        bottom: 0;
+        position: relative;
+    }
 
+    @media (max-width: 768px) {
+        #footer {
+            position: absolute;
+        }
+    }
+</style>
 
         <!-- Footer -->
 
