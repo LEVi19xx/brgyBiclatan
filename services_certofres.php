@@ -383,7 +383,7 @@
             <div class="logo">
             <a href="#"><img src="assets/goloo.png" alt="logo" height="60px" /></a>
           </div>
-            <a class="navbar-brand" href="resident_homepage.php" style="margin-left:10px"><b>Barangay Biclatan Information System</b></a>
+            <a class="navbar-brand" href="resident_homepage.php" style="margin-left:10px"><b>Biclatan InfoSystem</b></a>
             <a href="resident_homepage.php" style="margin-left:200px; font-size: 18px; font-weight:bold;">HOME</a>
             <a href="#down3" style="margin-left:30px; font-size: 18px; font-weight:bold;">PROCEDURE</a>
             <a href="#down1" style="margin-left:30px; font-size: 18px; font-weight:bold;">REGISTRATION</a>
@@ -400,7 +400,7 @@
             </div>
         </nav>
 
-        <div class="container-fluid container1"> 
+        <div class="container-fluid container1" style="height:450px; background-color: #ececec;"> 
             <div class="row"> 
                 <div class="col"> 
                     <div class="header">
@@ -427,13 +427,13 @@
 
         <br>
         <br>
-        <br>
+        
 
         <div class="container text-center">
             <div class="row">
                 <div class="col">
                     <br>
-                    <br><br><br><br><br><br><h1>Procedure</h1>
+                    <h1>Procedure</h1>
                     <hr style="background-color: black;">
                 </div>
             </div>
@@ -448,7 +448,7 @@
                     <br>
 
                     <h3>Step 1: Prepare</h3>
-                    <p style="text-align:justify-all;">First step is to prepare all of the information that will be<br> needed
+                    <p style="text-align:justify-all;">Prepare all of the information that will be<br> needed
                     in acquiring a certificate of residency.</p>
                     
                 </div>
@@ -459,7 +459,7 @@
                     <br>
 
                     <h3>Step 2: Apply</h3>
-                    <p style="text-align:justify-all;">Second Step is to apply in our system and<br> fill-up the entire form
+                    <p style="text-align:justify-all;">Apply in our system and<br> fill-up the entire form
                     given below.</p>
                 </div>
                 <div class="col">
@@ -469,38 +469,8 @@
                     <br>
 
                     <h3>Step 3: Release</h3>
-                    <p style="text-align:justify;">Fourth step is for releasing of your document. Please bring the following:</p>
-                    <?php
-                            require('classes/conn.php');
-              // Assuming $id_brgy_info contains the ID of the barangay information
-                          $id_services = 4; // Example barangay information ID
-
-                          // Query the database to fetch the content of the <p> tag associated with the barangay information ID
-                          $sql = "SELECT requires FROM tbl_services WHERE id_services = :id";
-                          $stmt = $conn->prepare($sql);
-                          $stmt->bindParam(':id', $id_services);
-                          $stmt->execute();
-
-                          $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-                          // Output the content of the <p> tag
-                        if ($row) {
-                            $requires = $row['requires'];
-
-                            // Split the content into separate items
-                            $items = explode('&', $requires);
-
-                            // Output each item as a separate list item
-                            echo '<ul>';
-                            foreach ($items as $item) {
-                                echo "<li style='text-align: left; margin-left:50px;'>$item</li>";
-                            }
-                            echo '</ul>';
-                        } else {
-                            echo "No content found for services ID $id_services";
-                        }
-
-                        ?>
+                    <p style="text-align:justify;">Releasing of your document. Please bring any valid ID.</p>
+                   
                 </div>
             </div>
 
@@ -518,9 +488,6 @@
         
         <div id="down1"></div>
 
-        <br>
-        <br>
-        <br>
 
          <!-- Button trigger modal -->
 
@@ -663,7 +630,7 @@
                         </div>
                         <!-- Modal Footer -->
 
-                        <div class="modal-footer" style="justify-content: flex-start; margin-left: 100px">
+                        <div class="modal-footer" style="justify-content: flex-start; margin-left: 130px; width: 100%; border: none;">
                             <div class="paa">
                                 <input name="id_resident" type="hidden" class="form-control" value="<?= $userdetails['id_resident']?>">
                                 <button name ="create_certofres" type="submit" class="btn btn-primary">Submit Request</button>
