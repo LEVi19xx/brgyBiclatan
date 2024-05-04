@@ -18,347 +18,211 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Animated Login Form</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<style>
-    *{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Barangay Biclatan Information System</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index1.css" type="text/css">
+    <script src="https://kit.fontawesome.com/67a9b7069e.js" crossorigin="anonymous"></script>
+    <script src="customjs/main.js" type="text/javascript"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+        body {
+            background: url('assets/newheader.jpg') fixed; /* Set background image to fixed */
+            background-size: cover; /* Ensure the background image covers the entire viewport */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
 
-body{
-    font-family: 'Poppins', sans-serif;
-    overflow: hidden;
-}
+        .logo-container {
+            position: fixed; /* Set position to fixed */
+            top: 50%; /* Center vertically */
+            left: -50px; /* Adjust right position */
+            transform: translateY(-50%); /* Center vertically */
+            z-index: 999; /* Set a high z-index to ensure it's above other elements */
+            text-align: right; /* Align text to right */
+            padding: 20px; /* Add padding */
+            margin-top: 30px;
+            border-radius: 10px; /* Add border radius */
+        }
 
-.wave{
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    height: 100%;
-    z-index: -1;
-    width: 100%;
-    object-fit: cover; /* Ito ang idinagdag na propesyonal upang mapanatili ang aspeto ng background image */
-    object-position: center; /* Ito ang idinagdag na propesyonal upang mapanatili ang aspeto ng background image */
-}
+        .logo {
+            width: 80%; /* Adjust the size as needed */
+            height: auto;
+            background-color: transparent; /* Remove background color */
+        }
 
+        .title-text {
+            font-size: 25px; /* Adjust the font size as needed */
+            color: #000000; /* Set the desired text color */
+            margin-top: 10px; /* Adjust the spacing */
+            font-weight: bold;
+        }
 
-.container{
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap :7rem;
-    padding: 0 2rem;
-}
+        .form-container {
+            position: fixed; /* Set position to fixed */
+            top: 50%; /* Center vertically */
+            right: 10%; /* Adjust right position */
+            transform: translateY(-50%); /* Center vertically */
+            max-width: 500px; /* Set max width for the form */
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 5px; /* Increase padding for better spacing */
+        }
 
-.img{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
+        /* Adjust the margin of the login button */
+        .btn-primary:hover {
+            background-color: #007bff;
+        }
+        .input-container .icon {
+            padding: 10px;
+            background: dodgerblue;
+            color: white;
+            min-width: 50px;
+            text-align: center;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
 
-.login-content{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: center;
-}
+        .input-container .input-field {
+            width: 85%; /* Set input field width to 100% */
+            height: 40px;
+            padding: 10px;
+            outline: none;
+            border: 1px solid #ccc;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
 
-.img img{
-    width: 500px;
-}
+            
+        .icon {
+            padding: 15px;
+            background: dodgerblue;
+            color: white;
+            min-width: 80px;
+            text-align: center;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
 
-form{
-    width: 450px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.9); /* Added box shadow */
-    border-radius: 20px; /* Rounded corners */
-    padding: 30px; /* Added padding */
-    background-color: #fff; /* White background */
-}
+        .login-button {
+            margin-top: 20px;
+            width: 100%;
+        }
 
+        .registration-section {
+            text-align: center;
+            margin-top: 5px;
+        }
 
+        .create-button {
+            background-color: #28a745;
+            border: none;
+        }
 
-.login-content img{
-    height: 100px;
-}
+        .create-button:hover {
+            background-color: #218838;
+        }
 
-.login-content h2{
-    margin: 15px 0;
-    color: #333;
-    text-transform: uppercase;
-    font-size: 2rem;
-}
-
-.login-content .input-div{
-    position: relative;
-    display: grid;
-    grid-template-columns: 7% 93%;
-    margin: 25px 0;
-    padding: 5px 0;
-    border-bottom: 2px solid #d9d9d9;
-}
-
-.login-content .input-div.one{
-    margin-top: 0;
-}
-
-.i{
-    color: #d9d9d9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.i i{
-    transition: .3s;
-}
-
-.input-div > div{
-    position: relative;
-    height: 45px;
-}
-
-.input-div > div > h5{
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #999;
-    font-size: 18px;
-    transition: .3s;
-}
-
-.input-div:before, .input-div:after{
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    width: 0%;
-    height: 2px;
-    background-color: #007bff;
-    transition: .4s;
-}
-
-.input-div:before{
-    right: 50%;
-}
-
-.input-div:after{
-    left: 50%;
-}
-
-.input-div.focus:before, .input-div.focus:after{
-    width: 50%;
-}
-
-.input-div.focus > div > h5{
-    top: -5px;
-    font-size: 15px;
-}
-
-.input-div.focus > .i > i{
-    color: #007bff;
-}
-
-.input-div > div > input{
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    outline: none;
-    background: none;
-    padding: 0.5rem 0.7rem;
-    font-size: 1.2rem;
-    color: #555;
-    font-family: 'poppins', sans-serif;
-}
-
-.input-div.pass{
-    margin-bottom: 4px;
-}
-
-a{
-    display: block;
-    text-align: right;
-    text-decoration: none;
-    color: #999;
-    font-size: 0.9rem;
-    transition: .3s;
-}
-
-a:hover{
-    color: #007bff;
-}
-
-.btn{
-    display: block;
-    width: 100%;
-    height: 40px;
-    border-radius: 5px;
-    outline: none;
-    border: none;
-    background-image: linear-gradient(to right, #007bff, #007bff, #007bff);
-    background-size: 200%;
-    font-size: 1rem;
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
-    text-transform: uppercase;
-    margin: 1rem 0;
-    cursor: pointer;
-    transition: .5s;
-}
-.btn:hover{
-    background-position: right;
-}
-.btn1{
-    display: block;
-    width: 100%;
-    height: 40px;
-    border-radius: 5px;
-    outline: none;
-    border: none;
-    background-image: linear-gradient(to right, #0B5345, #0B5345, #0B5345);
-    background-size: 200%;
-    font-size: 1rem;
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
-    text-transform: uppercase;
-    margin: 1rem 0;
-    cursor: pointer;
-    transition: .5s;
-}
-.btn1:hover{
-    background-position: right;
-}
-.btn2{
-    display: block;
-    width: 100%;
-    height: 40px;
-    border-radius: 5px;
-    outline: none;
-    border: none;
-    background-image: linear-gradient(to right, #28a745, #28a745, #28a745);
-    background-size: 200%;
-    font-size: 1rem;
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
-    text-transform: uppercase;
-    margin: 1rem 0;
-    cursor: pointer;
-    transition: .5s;
-}
-.btn2:hover{
-    background-position: right;
-}
-
-
-@media screen and (max-width: 1050px){
-    .container{
-        grid-gap: 5rem;
-    }
-}
-
-@media screen and (max-width: 1000px){
-    form{
-        width: 290px;
-    }
-
-    .login-content h2{
-        font-size: 2.4rem;
-        margin: 8px 0;
-    }
-
-    .img img{
-        width: 400px;
-    }
-}
-
-@media screen and (max-width: 900px){
-    .container{
-        grid-template-columns: 1fr;
-    }
-
-    .img{
-        display: none;
-    }
-
-    .login-content{
-        justify-content: center;
-    }
-}
+        
     </style>
+    <style>
+    .input-container {
+        position: relative;
+    }
+
+    .eye-icon {
+        position: absolute;
+        left: 400px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+</style>
+</head>
 <body>
-    <img class="wave" src="assets/newheader.jpg">
+<section class="main-section">
     <div class="container">
-        <div class="img">
-            <img src="assets/goloo.png">
-        </div>
-        <div class="login-content">
-            <form action="index.html">
-                <!--<img src="assets/goloo.png">-->
-                <h2 class="title">Biclatan InfoSystem</h2>
-                <div class="input-div one">
-                   <div class="i">
-                        <i class="fas fa-user"></i>
-                   </div>
-                   <div class="div">
-                        <h5>Email Address</h5>
-                        <input type="text" class="input" id="email" name="email" >
-                   </div>
-                </div>
-                <div class="input-div pass">
-                   <div class="i"> 
-                        <i class="fas fa-lock"></i>
-                   </div>
-                   <div class="div">
-                        <h5>Password</h5>
-                        <input type="password" class="input" id="password" name="password">
-                   </div>
-                </div>
-                <div class="input-div pass">
-                <div class="g-recaptcha" data-sitekey="6LdM0DgUAAAAAHtPjQfbqTX6viYFbOvkcFs_twDp" style="transform:scale(0.8);transform-origin:0;-webkit-transform:scale(0.8);transform:scale(0.8);">
+        <div class="row">
+            <div class="col-md-6 logo-container">
+                <img src="assets/goloo.png" alt="Logo" class="logo">
+            </div>
+            <div class="col-md-6 form-container">
+                <div class="card main-card mt-3">
+                    <div class="card-body">
+                        <form method="post" class="input-container">
+                            <div class="mb-3">
+                            <center><p class="title-text">Barangay Biclatan Information System</p></center>
+                            <label for="email" class="form-label"><b>Email:</b></label>
+                            <div class="input-container">
+                                <i class="fa fa-envelope icon"></i>
+                                <input class="input-field" type="email" id="email" placeholder="Enter Email" name="email" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label"><b>Password:</b></label>
+                            <div class="input-container">
+                                <i class="fa fa-key icon"></i>
+                                <input class="input-field" type="password" id="password" placeholder="Enter Password" name="password" required>
+                                <i class="fa fa-eye-slash eye-icon" onclick="togglePasswordVisibility()"></i>
+                            </div>
+                        </div>
+                            <div class="form-group">
+                                <div class="g-recaptcha" data-sitekey="6LdM0DgUAAAAAHtPjQfbqTX6viYFbOvkcFs_twDp" style="transform:scale(0.8);transform-origin:0;-webkit-transform:scale(0.8);transform:scale(0.8);"></div>
+                            </div>
+
+
+                            <button class="btn btn-primary login-button" type="submit" name="login">Log-in</button>
+                            <a href="index.php" class="btn btn-danger login-button" type="submit" name="login"  style="background-color: #0B5345; border: 2px solid #0B5345;">Back to homepage</a>
+                        </form>
+
+                        <hr>
+
+                        <div class="registration-section">
+                            <p1><strong>Haven't registered yet?</strong></p1><br>
+                            <p1>Hindi ka pa rehistrado?</p1><br>
+                            <button class="btn btn-success create-button" onclick="trying();">Create Account</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-                <input type="submit" class="btn" value="Login" name="login">
-                <input type="submit" class="btn1" value="Back to Homepage">
-                <hr><br>
-                <h4>Haven't registered yet?</h4>
-                <h5 style="font-weight: lighter;">Hindi ka pa rehistrado?</h5>
-                <input type="submit" class="btn2" value="Create New Account">
-            </form>
         </div>
     </div>
-    <script type="text/javascript" src="js/main.js"></script>
-</body>
+</section>
 <script>
-    const inputs = document.querySelectorAll(".input");
-
-
-function addcl(){
-    let parent = this.parentNode.parentNode;
-    parent.classList.add("focus");
-}
-
-function remcl(){
-    let parent = this.parentNode.parentNode;
-    if(this.value == ""){
-        parent.classList.remove("focus");
+    function myFunction() {
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
     }
-}
 
-
-inputs.forEach(input => {
-    input.addEventListener("focus", addcl);
-    input.addEventListener("blur", remcl);
-});
+    function trying() {
+        window.location.href = "resident_registration.php";
+    }
 </script>
+
+<script>
+    function togglePasswordVisibility() {
+        var passwordInput = document.getElementById("password");
+        var eyeIcon = document.querySelector(".eye-icon");
+
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            eyeIcon.classList.remove("fa-eye-slash");
+            eyeIcon.classList.add("fa-eye");
+        } else {
+            passwordInput.type = "password";
+            eyeIcon.classList.remove("fa-eye");
+            eyeIcon.classList.add("fa-eye-slash");
+        }
+    }
+</script>
+
+</body>
 </html>
