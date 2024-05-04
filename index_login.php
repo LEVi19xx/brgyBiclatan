@@ -84,7 +84,7 @@ form {
     width: 450px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.9);
     border-radius: 20px;
-    padding: 30px;
+    padding: 20px;
     background-color: #fff;
 }
 
