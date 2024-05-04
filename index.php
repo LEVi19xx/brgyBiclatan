@@ -821,6 +821,17 @@ nav {
     background-color: rgba(17, 43, 90, 0.9);
 }
 
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    #scrollTopBtn {
+        bottom: 20px;
+        right: 20px;
+        padding: 10px; /* Adjust padding for smaller screens */
+        font-size: 30px; /* Adjust font size for smaller screens */
+    }
+}
+
+
 
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
