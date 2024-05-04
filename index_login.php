@@ -362,7 +362,9 @@ a:hover{
                    </div>
                    <div class="div">
                         <h5>Password</h5>
+                        <i class="fa fa-key icon"></i>
                         <input type="password" class="input" id="password" name="password">
+                        <i class="fa fa-eye-slash eye-icon" onclick="togglePasswordVisibility()"></i>
                    </div>
                 </div>
                 <div class="div">
@@ -380,6 +382,22 @@ a:hover{
     </div>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
+<script>
+    function togglePasswordVisibility() {
+        var passwordInput = document.getElementById("password");
+        var eyeIcon = document.querySelector(".eye-icon");
+
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            eyeIcon.classList.remove("fa-eye-slash");
+            eyeIcon.classList.add("fa-eye");
+        } else {
+            passwordInput.type = "password";
+            eyeIcon.classList.remove("fa-eye");
+            eyeIcon.classList.add("fa-eye-slash");
+        }
+    }
+</script>
 <script>
     const inputs = document.querySelectorAll(".input");
 
