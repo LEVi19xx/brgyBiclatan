@@ -1580,7 +1580,7 @@ nav {
     <br><br><br><br><br><footer class="footer">
       <div class="section__container footer__container">
         <div class="footer__content">
-          <h4>Barangay Biclatan, General Trias Cavite</h4>
+          <h4>Brgy Biclatan, <br>General Trias Cavite</h4>
           <p>
             Biclatan is a barangay in the city of General Trias, in the province of Cavite.
           </p>
