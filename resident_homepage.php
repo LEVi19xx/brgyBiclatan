@@ -291,7 +291,7 @@
         <div class="logo">
             <a href="#"><img src="assets/goloo.png" alt="logo" height="60px" /></a>
         </div>
-        <a class="navbar-brand" href="resident_homepage.php"><b>Barangay Biclatan Information System</b></a>
+        <a class="navbar-brand" href="resident_homepage.php"><b>Biclatan InfoSystem</b></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
