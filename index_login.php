@@ -367,7 +367,7 @@ a:hover{
                     <div class="g-recaptcha" data-sitekey="6LdM0DgUAAAAAHtPjQfbqTX6viYFbOvkcFs_twDp" style="transform:scale(0.8);transform-origin:0;-webkit-transform:scale(0.8);transform:scale(0.8);">
                     </div>
                 </div>
-                <input type="submit" class="btn" value="Login" name="login">
+                <input class="btn" value="Login" name="login">
                 <a href="index.php"><input class="btn1" value="Back to Homepage"></a>
                 <hr><br>
                 <h4 style="font-size: 18px;"><b>Haven't registered yet?</b></h4>
