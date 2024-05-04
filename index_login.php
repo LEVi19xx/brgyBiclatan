@@ -368,7 +368,7 @@ a:hover{
                     </div>
                 </div>
                 <button class="btn btn-primary login-button" type="submit" name="login">Log-in</button>
-                <a href="index.php" class="btn btn-danger login-button" type="submit" name="login"  style="background-color: #0B5345; border: 2px solid #0B5345;">Back to homepage</a>
+                <a href="index.php" class="btn1" type="submit" name="login"  style="background-color: #0B5345;">Back to homepage</a>
                 <hr><br>
                 <h4 style="font-size: 18px;"><b>Haven't registered yet?</b></h4>
                 <h5 style="font-weight: lighter; font-size: 15px;">Hindi ka pa rehistrado?</h5>
