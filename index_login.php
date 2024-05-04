@@ -383,6 +383,16 @@ a:hover{
     <script type="text/javascript" src="js/main.js"></script>
 </body>
 <script>
+    function myFunction() {
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
+<script>
     function togglePasswordVisibility() {
         var passwordInput = document.getElementById("password");
         var eyeIcon = document.querySelector(".eye-icon");
