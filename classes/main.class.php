@@ -1279,9 +1279,8 @@ public function update_approval($id_resident, $status) {
 
 
     public function create_certofres() {
-
         if(isset($_POST['create_certofres'])) {
-            $id_rescert = $_POST['id_rescert'];
+            // Retrieve form field values
             $id_resident = $_POST['id_resident'];
             $lname = $_POST['lname'];
             $fname = $_POST['fname'];
@@ -1294,23 +1293,22 @@ public function update_approval($id_resident, $status) {
             $municipal = $_POST['municipal'];
             $date = $_POST['date'];
             $purpose = $_POST['purpose'];
-            
-
-
+    
+            // Prepare and execute the SQL query
             $connection = $this->openConn();
-            $stmt = $connection->prepare("INSERT INTO tbl_rescert (`id_rescert`, `id_resident`, `lname`, `fname`, `mi`,
-             `age`,`nationality`, `houseno`, `street`,`brgy`, `municipal`, `date`,`purpose`)
-            VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?)");
-
-            $stmt->execute([$id_rescert, $id_resident, $lname, $fname, $mi,  $age, $nationality, $houseno,  $street, $brgy,$municipal, $date,$purpose]);
-
+            $stmt = $connection->prepare("INSERT INTO tbl_rescert (`id_resident`, `lname`, `fname`, `mi`,
+             `age`, `nationality`, `houseno`, `street`, `brgy`, `municipal`, `date`, `purpose`)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    
+            $stmt->execute([$id_resident, $lname, $fname, $mi, $age, $nationality, $houseno, $street, $brgy, $municipal, $date, $purpose]);
+    
+            // Handle success message and redirection
             $message2 = "Application Applied!";
             echo "<script type='text/javascript'>alert('$message2');</script>";
             header("refresh: 0");
         }
-        
-        
     }
+    
     public function create_certofres_walkin() {
 
         if(isset($_POST['create_certofres_walkin'])) {
