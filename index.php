@@ -786,7 +786,7 @@ nav {
 
 .contact-box p {
   margin-bottom: 5px;
-  font-size: 25px;
+  font-size: 20px;
   color: black;
 }
 
