@@ -386,9 +386,7 @@ function addcl(){
     let parent = this.parentNode.parentNode;
     parent.classList.add("focus");
 }
-function trying() {
-        window.location.href = "resident_registration.php";
-    }
+
 function remcl(){
     let parent = this.parentNode.parentNode;
     if(this.value == ""){
@@ -396,10 +394,14 @@ function remcl(){
     }
 }
 
-
 inputs.forEach(input => {
     input.addEventListener("focus", addcl);
     input.addEventListener("blur", remcl);
 });
+</script>
+<script>
+function trying() {
+        window.location.href = "resident_registration.php";
+    }
 </script>
 </html>
