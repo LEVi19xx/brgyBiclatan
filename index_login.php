@@ -337,7 +337,11 @@ a:hover{
     }
 }
 
-.eye-icon {
+.input-container {
+        position: relative;
+    }
+
+    .eye-icon {
         position: absolute;
         left: 400px;
         top: 50%;
