@@ -16,7 +16,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.2.6/js/bootstrap-modalmanager.min.js" integrity="sha512-/HL24m2nmyI2+ccX+dSHphAHqLw60Oj5sK8jf59VWtFWZi9vx7jzoxbZmcBeeTeCUc7z1mTs3LfyXGuBU32t+w==" crossorigin="anonymous"></script>
       <!-- responsive tags for screen compatibility -->
       <meta name="viewport" content="width=device-width, initial-scale=1"><!-- bootstrap css --> 
-      <link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+      <link href="bootstrap.css" rel="stylesheet" type="text/css">
       <!-- fontawesome icons --> 
       <script src="https://kit.fontawesome.com/67a9b7069e.js" crossorigin="anonymous"></script>
   
@@ -224,24 +224,16 @@
             background: #555; 
             }
 
-            .card5 {
-                width: 195px;
-                height: 210px;
-                overflow: auto;
-                margin: auto;
-                color: white;
-            }
-
             .card4 {
-                width: 195px;
+                width: 250px;
                 height: 210px;
-                overflow: auto;
+                overflow: hidden;
                 margin: auto;
                 color: white;
             }
 
             .card3 {
-                width: 195px;
+                width: 250px;
                 height: 210px;
                 overflow: hidden;
                 margin: auto;
@@ -249,7 +241,7 @@
             }
 
             .card2 {
-                width: 195px;
+                width: 250px;
                 height: 210px;
                 overflow: auto;
                 margin: auto;
@@ -257,7 +249,7 @@
             }
 
             .card1 {
-                width: 195px;
+                width: 250px;
                 height: 210px;
                 overflow: auto;
                 margin: auto;
@@ -378,27 +370,69 @@
         </a>
 
         <!-- Eto yung navbar -->
+<style>
 
-        <nav class="navbar navbar-dark bg-primary sticky-top">
-            <div class="logo">
-            <a href="#"><img src="assets/goloo.png" alt="logo" height="60px" /></a>
-          </div>
-            <a class="navbar-brand" href="resident_homepage.php">Barangay Biclatan Information System</a>
-            <a href="resident_homepage.php" style="margin-left:200px; font-size: 18px; font-weight:bold;">HOME</a>
-            <a href="#down3" style="margin-left:30px; font-size: 18px; font-weight:bold;">PROCEDURE</a>
-            <a href="#down1" style="margin-left:30px; font-size: 18px; font-weight:bold;">REGISTRATION</a>
-           
-            <div class="dropdown ml-auto">
-                <button title="Your Account" class="btn btn-primary dropdown-toggle" style="margin-right: 2px;" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
-                    <span class="caret" style="margin-left: 2px;"></span>
-                </button>
-                <ul class="dropdown-menu" style="width: 175px;" >
-                    <a class="btn" href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-user"> &nbsp; </i>Personal Profile  </a>
-                    <a class="btn" href="resident_changepass.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-lock" >&nbsp;</i> Change Password  </a>
-                    <a class="btn" href="logout.php"> <i class="fas fa-sign-out-alt">&nbsp;</i> Logout  </a>
-                </ul>
-            </div>
-        </nav>
+.text1 {
+    font-size: 2.5rem;
+}
+
+.text2 {
+    font-size: 1.1rem;
+}
+
+.picture {
+    width: 100px;
+    height: auto;
+}
+
+        </style>
+  </head>
+
+    <body>
+
+        <!-- Back-to-Top and Back Button -->
+
+        <a data-toggle="tooltip" title="Back-To-Top" class="top-link hide" href="" id="js-top">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6"><path d="M12 6H0l6-6z"/></svg>
+            <span class="screen-reader-text">Back to top</span>
+        </a>
+
+        <!-- Eto yung navbar -->
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="logo">
+        <a href="#"><img src="assets/goloo.png" alt="logo" height="60px" /></a>
+    </div>
+    <a class="navbar-brand" href="resident_homepage.php"><b>Biclatan InfoSystem</b></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="resident_homepage.php" class="nav-link">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a href="#down3" class="nav-link">PROCEDURE</a>
+            </li>
+            <li class="nav-item">
+                <a href="#down1" class="nav-link">REGISTRATION</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="dropdown ml-auto">
+        <button title="Your Account" class="btn btn-primary dropdown-toggle" style="margin-right: 2px;" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?>, <?= $userdetails['firstname'];?>
+            <span class="caret" style="margin-left: 2px;"></span>
+        </button>
+        <ul class="dropdown-menu" style="width: 175px;">
+            <li><a class="dropdown-item" href="resident_profile.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-user"></i> &nbsp; Personal Profile</a></li>
+            <li><a class="dropdown-item" href="resident_changepass.php?id_resident=<?= $userdetails['id_resident'];?>"> <i class="fas fa-lock"></i>&nbsp; Change Password</a></li>
+            <li><a class="dropdown-item" href="logout.php"> <i class="fas fa-sign-out-alt"></i>&nbsp; Logout</a></li>
+        </ul>
+    </div>
+</nav>
 
         <div class="container-fluid container1"> 
             <div class="row"> 
@@ -412,13 +446,11 @@
 
                     <br>
 
-                    <img class="picture" src="icons/Documents/docu1.png">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img class="picture" src="icons/Documents/docu3.png">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img class="picture" src="icons/Documents/docu2.png">
+                    <div class="d-flex justify-content-center">
+                <img class="picture" src="icons/Documents/docu1.png" alt="Document 1">&nbsp;
+                <img class="picture" src="icons/Documents/docu3.png" alt="Document 3">&nbsp;
+                <img class="picture" src="icons/Documents/docu2.png" alt="Document 2">&nbsp;
+            </div>
                 </div>
             </div>
         </div>
@@ -426,17 +458,12 @@
         <div id="down3"></div>
 
         <br>
-        <br>
-        <br>
+        
 
-        <div class="container text-center">
+        <div class="container text-center" style="height:450px; background-color: #ececec;">
             <div class="row">
                 <div class="col">
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
+                    
                     <br><h1>Procedure</h1>
                     <hr style="background-color: black;">
                 </div>
@@ -452,7 +479,7 @@
                     <br>
 
                     <h3>Step 1: Fill-Up</h3>
-                    <p style="text-align:justify;">First step is to Fill-Up the entire form in our system.</p>
+                    <p style="text-align:justify;">Fill-Up the entire form in our system.</p>
                     
                 </div>
 
@@ -463,7 +490,7 @@
                     <br>
 
                     <h3>Step 2: Assessment</h3>
-                    <p style="text-align:justify;">Second step is to verify all of the information you've been given
+                    <p style="text-align:justify;">Verify all of the information you've been given
                     in our system that we can use to make the information of your document
                     accurately.</p>
                 </div>
@@ -475,32 +502,8 @@
                     <br>
 
                     <h3>Step 3: Release</h3>
-                    <p style="text-align:justify;">Fourth step is for releasing of your document. Please bring the following:</p>
-                    <?php
-                            require('classes/conn.php');
-              // Assuming $id_brgy_info contains the ID of the barangay information
-                          $id_services = 6; // Example barangay information ID
-
-                          // Query the database to fetch the content of the <p> tag associated with the barangay information ID
-                          $sql = "SELECT requires FROM tbl_services WHERE id_services = :id";
-                          $stmt = $conn->prepare($sql);
-                          $stmt->bindParam(':id', $id_services);
-                          $stmt->execute();
-
-                          $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-                          // Output the content of the <p> tag
-                          if ($row) {
-                              $requires = $row['requires'];
-
-                              echo "<li style='text-align: left;'>";
-                              echo "$requires<br />";
-                              echo "</li>";
-                          } else {
-                              echo "No content found for barangay information ID $id_brgy_info";
-                          }
-
-                        ?>
+                    <p style="text-align:justify;">Releasing of your document. Please bring any valid ID.</p>
+                    
                 </div>
             </div>
 
@@ -517,8 +520,7 @@
         <div id="down1"></div>
 
         <br>
-        <br>
-        <br>
+        
 
         <!-- Button trigger modal -->
 
@@ -668,7 +670,7 @@
 
                         <!-- Modal Footer -->
             
-                        <div class="modal-footer" style="justify-content: flex-start; margin-left: 100px;">
+                        <div class="modal-footer" style="justify-content: flex-start; margin-left: 130px; width: 100%; border: none;">
                             <div class="paa">
                                 <input name="id_resident" type="hidden" class="form-control" value="<?= $userdetails['id_resident']?>">
                                 <input name="addedby" type="hidden" class="form-control" value="<?= $userdetails['surname']?> <?= $userdetails['firstname']?> <?= $userdetails['mname']?>">
