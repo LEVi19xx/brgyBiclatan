@@ -765,7 +765,7 @@
                                     </div>
                                 </div>
 
-                                <div class="modal-footer" style="justify-content: flex-start; margin-left:85px;">
+                                <div class="modal-footer" style="justify-content: flex-start; margin-left:105px; width: 100%; border: none;">
                                     <div class="paa">
                                         <input name="id_resident" type="hidden" value="<?= $resident['id_resident']?>">
                                         <button type="submit" name="create_blotter" class="btn btn-primary">Save changes</button>
