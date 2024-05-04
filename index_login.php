@@ -79,14 +79,28 @@ body{
     width: 500px;
 }
 
-form{
+/* Initial styling for the form */
+form {
     width: 450px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.9); /* Added box shadow */
-    border-radius: 20px; /* Rounded corners */
-    padding: 30px; /* Added padding */
-    background-color: #fff; /* White background */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.9);
+    border-radius: 20px;
+    padding: 30px;
+    background-color: #fff;
 }
 
+/* Adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+    form {
+        width: 80%; /* Set width to a percentage for responsiveness */
+        max-width: 450px; /* Set a maximum width if needed */
+    }
+}
+
+@media screen and (max-width: 576px) {
+    form {
+        width: 90%; /* Further adjust width for smaller screens */
+    }
+}
 
 
 .login-content img{
