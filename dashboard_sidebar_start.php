@@ -26,6 +26,9 @@
     background-color: #023EBA !important; /* Change to desired background color */
 }
 
+.navbar .btn{
+    justify-content: flex-start;
+}
 
     </style>
 
