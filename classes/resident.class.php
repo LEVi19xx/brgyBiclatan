@@ -356,6 +356,14 @@ public function profile_update_admin() {
         return $rescount;
     }
 
+    public function view_pwd(){
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE `pwd` = 'Yes'");
+        $stmt->execute();
+        $view = $stmt->fetchAll();
+        return $view;
+    }
+
 
 
 
@@ -646,7 +654,6 @@ if($hashed_old_password !== $result['password']) {
         $pwdcount = $stmt->fetchColumn();
         return $pwdcount;
     }
-
     public function count_single_parent() {
         $connection = $this->openConn();
         $stmt = $connection->prepare("SELECT COUNT(*) from tbl_resident WHERE single_parent = 'yes' and request_status = 'approved'");
