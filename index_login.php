@@ -325,24 +325,28 @@ a:hover{
     -webkit-transform: scale(0.8);
     transform: scale(0.8);
     border: none; /* Initially set border to none */
+    transition: border-color 0.3s ease; /* Add transition for border change */
 }
 
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
     .div .g-recaptcha {
-        transform: scale(0.7);
+        transform: scale(0.6);
         border-top: 2px solid red; /* Adjust the border width according to the scale */
         border-bottom: 2px solid red; /* Adjust the border width according to the scale */
+        width: calc(100% - 4px); /* Calculate the width based on the border width */
     }
 }
 
 @media screen and (max-width: 576px) {
     .div .g-recaptcha {
-        transform: scale(0.6);
+        transform: scale(0.5);
         border-top: 1.5px solid red; /* Adjust the border width according to the scale */
         border-bottom: 1.5px solid red; /* Adjust the border width according to the scale */
+        width: calc(100% - 3px); /* Calculate the width based on the border width */
     }
 }
+
 
 
 
