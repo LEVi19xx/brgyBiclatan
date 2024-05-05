@@ -38,21 +38,16 @@
         <ul class="navbar-nav bg-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <div class="d-flex align-items-center">
-    <a class="sidebar-brand d-flex align-items-center justify-content-start" href="admin_dashboard.php">
-        <div class="sidebar-brand-icon rotate-n-15"></div>
-        <img src="logojpg.jpg" alt="Logo" style="height: 40px; width: 40px; margin-right: 10px; height: 40px;
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin_dashboard.php">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    
+                </div>
+                <img src="logojpg.jpg" alt="Logo" style="height: 40px; width: 40px; margin-right: 10px; height: 40px;
     width: 40px;
     margin-right: 10px; /* space between logo and system name */
     border-radius: 50%; ">
-        <div class="sidebar-brand-text">Administrator Dashboard </div>
-    </a>
-
-    <!-- Hamburger icon button -->
-    <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
-        <i class="fa fa-bars"></i>
-    </button>
-</div>
+                <div class="sidebar-brand-text">Administrator Dashboard </div>
+            </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
@@ -197,7 +192,7 @@
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
+                        <i class="fa fa-bars" style="justify-content: flex-start;"></i>
                     </button>
 
                     <!-- Topbar Navbar -->
