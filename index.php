@@ -35,7 +35,7 @@
 .section__container {
   max-width: var(--max-width);
   margin: auto;
-  padding: 5rem 2rem;
+  padding: 7rem 2rem;
 }
 
 .section__header {
