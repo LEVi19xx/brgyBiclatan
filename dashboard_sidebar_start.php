@@ -224,7 +224,7 @@
                             </div>
                         </li>
                             <div class="dropdown ml-auto">
-                <button title="Your Account" class="btn btn-primary dropdown-toggle" style="margin-right: 2px; margin-top: 5px;" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?> <?= $userdetails['firstname'];?>
+                <button title="Your Account" class="btn btn-primary dropdown-toggle" style="margin-right: 2px; padding-top: 5px;" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?> <?= $userdetails['firstname'];?>
                     <span class="caret" style="margin-left: 2px;"></span>
                 </button>
                 <ul class="dropdown-menu" style="width: 175px;" >
