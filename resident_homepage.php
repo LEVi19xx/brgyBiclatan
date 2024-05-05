@@ -286,7 +286,7 @@
     padding: 15px;
     border-radius: 100%;
     transition: background-color 0.3s ease;
-    font-size: 40px; /* Adjust the size as needed */
+    font-size: 30px; /* Adjust the size as needed */
 }
 
 #scrollTopBtn:hover {
