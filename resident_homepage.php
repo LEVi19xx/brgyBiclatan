@@ -577,7 +577,7 @@
                 </div>
 
                 <button id="scrollTopBtn" onclick="scrollToTop()">
-      <i class="ri-arrow-up-s-line"></i>
+                <i class="fas fa-angle-up"></i>
     </button>
 
         <!--/.Footer Links-->
