@@ -1481,7 +1481,7 @@ nav {
 7WG8+QH6, Green Breeze Village, General Trias, Cavite</p></center>
 <br>
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29764.41689857513!2d120.89564494764015!3d14.279164304934103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd7fe85ac7b9e9%3A0x48fed9f90c1f68b7!2sBiclatan%20Barangay%20Hall!5e1!3m2!1sfil!2sph!4v1714840498332!5m2!1sfil!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </section>
+      </section><br><br>
 
       <style>
 .location__container {
