@@ -61,8 +61,8 @@
                 </div>
                 <button class="btn btn-success" style="width: 70px; font-size: 15px; border-radius:5px; margin-left:42%;" name="search_bspermit">Search</button>
                 <a href="admn_blotterreport.php" class="btn btn-info" style="width: 70px; font-size: 15px; border-radius:5px;">Reload</a>
-            </form>-->
-            <br>
+            </form>
+            <br>-->
         </div>
     </div>
 
