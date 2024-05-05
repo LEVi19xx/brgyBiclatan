@@ -18,15 +18,16 @@
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/67a9b7069e.js" crossorigin="anonymous"></script>
-
-    <style>
-        .clicked {
-            color: white;
-            background-color: #023EBA !important; /* Change to desired background color */
-        }
-    </style>
-
 </head>
+<style>
+
+.clicked {
+    color: white;
+    background-color: #023EBA !important; /* Change to desired background color */
+}
+
+
+    </style>
 
 <body id="page-top">
 
@@ -102,6 +103,13 @@
                     <span> Announcements</span></a>
             </li>
 
+            <!-- Announcement Management -->
+            <!--<li class="nav-item">
+                <a class="nav-link" href="list_of_services.php">
+                    <i class="fas fa-list"></i>
+                    <span> List of Services</span></a>
+            </li>-->
+
             <!-- Certificate of Residency -->
             <li class="nav-item">
                 <a class="nav-link" href="admn_certofres.php">
@@ -109,12 +117,14 @@
                     <span> Certificate of Residency</span></a>
             </li>
 
-            <!-- Business Clearance -->
+
             <li class="nav-item">
                 <a class="nav-link" href="admn_bspermit.php">
                     <i class="fas fa-file-contract"></i>
                     <span>Business Clearance</span></a>
             </li>
+
+
 
             <!-- Barangay Clearance -->
             <li class="nav-item">
@@ -130,14 +140,12 @@
                     <span>Certificate of Indigency</span></a>
             </li>
 
-            <!-- Blotter Report -->
+            <!-- Complain Blotter Report -->
             <li class="nav-item">
                 <a class="nav-link" href="admn_blotterreport.php">
                     <i class="fas fa-user-shield"></i>
                     <span>Blotter Report</span></a>
             </li>
-
-            <hr class="sidebar-divider">
 
             <div class="sidebar-heading">
                 Settings
@@ -149,10 +157,25 @@
                     <span> Barangay Activities</span></a>
             </li>
 
+            <!-- Announcement Management -->
             <li class="nav-item">
                 <a class="nav-link" href="brgyInfo_modal.php">
                     <i class="fas fa-info-circle"></i>
                     <span> Barangay Info</span></a>
+            </li>
+
+            <!-- Announcement Management -->
+            <!--<li class="nav-item">
+                <a class="nav-link" href="position_modal.php">
+                    <i class="fas fa-star"></i>
+                    <span> Position</span></a>
+            </li>-->
+
+            <!-- Certificate of Residency 
+            <li class="nav-item">
+                <a class="nav-link" href="chairman_modal.php?id_system=1">
+                    <i class="fas fa-user"></i>
+                    <span> System Info</span></a>-->
             </li>
 
         </ul>
@@ -168,13 +191,13 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <!-- Hamburger Icon -->
-                        <li class="nav-item">
-                            <button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop" onclick="toggleSidebar()">
-                                <i class="fa fa-bars"></i>
-                            </button>
-                        </li>
+
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                         <li class="nav-item dropdown no-arrow d-sm-none">
                             <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
@@ -199,72 +222,39 @@
                             </div>
                         </li>
                         <!-- Nav Item - User Information -->
-                        <div class="dropdown ml-auto">
-                            <button title="Your Account" class="btn btn-primary dropdown-toggle" style="margin-right: 2px;" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?> <?= $userdetails['firstname'];?>
-                                <span class="caret" style="margin-left: 2px;"></span>
-                            </button>
-                            <ul class="dropdown-menu" style="width: 175px;" >
-                                <a class="btn" href="admin_profile.php?id_admin=<?= $userdetails['id_admin'];?>"> <i class="fas fa-user"> &nbsp; </i>Personal Profile  </a>
-                                <!--<a class="btn" href="admin_changepass.php?id_admin=<?= $userdetails['id_admin'];?>"> <i class="fas fa-lock" >&nbsp;</i> Change Password  </a>-->
-                                <a class="btn" href="logout.php"> <i class="fas fa-sign-out-alt">&nbsp;</i> Logout  </a>
-                            </ul>
-                        </div>
+                            <div class="dropdown ml-auto">
+                <button title="Your Account" class="btn btn-primary dropdown-toggle" style="margin-right: 2px;" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?> <?= $userdetails['firstname'];?>
+                    <span class="caret" style="margin-left: 2px;"></span>
+                </button>
+                <ul class="dropdown-menu" style="width: 175px;" >
+                    <a class="btn" href="admin_profile.php?id_admin=<?= $userdetails['id_admin'];?>"> <i class="fas fa-user"> &nbsp; </i>Personal Profile  </a>
+                    <!--<a class="btn" href="admin_changepass.php?id_admin=<?= $userdetails['id_admin'];?>"> <i class="fas fa-lock" >&nbsp;</i> Change Password  </a>-->
+                    <a class="btn" href="logout.php"> <i class="fas fa-sign-out-alt">&nbsp;</i> Logout  </a>
+                </ul>
+            </div>
                     </ul>
                 </nav>
 
-                <!-- Your content goes here -->
 
-            </div>
-            <!-- End of Main Content -->
+<script>
+    // Get the current URL
+    var url = window.location.href;
+    // Get the sidebar items
+    var sidebarItems = document.querySelectorAll('.nav-item');
 
-            <!-- Footer -->
-            <!-- Your footer code -->
-
-        </div>
-        <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <!-- Your scroll to top button code -->
-
-    <!-- Logout Modal-->
-    <!-- Your logout modal code -->
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
-
-    <!-- Your custom JavaScript -->
-    <script>
-        // Get the current URL
-        var url = window.location.href;
-        // Get the sidebar items
-        var sidebarItems = document.querySelectorAll('.nav-item');
-
-        // Loop through each sidebar item
-        sidebarItems.forEach(function(item) {
-            // Check if the item's link matches the current URL
-            if (item.querySelector('a').href === url) {
-                // Add the 'clicked' class to the item
-                item.classList.add('clicked');
-            }
-        });
-
-        // Function to toggle sidebar
-        function toggleSidebar() {
-            var sidebar = document.getElementById('accordionSidebar');
-            sidebar.classList.toggle('toggled');
+    // Loop through each sidebar item
+    sidebarItems.forEach(function(item) {
+        // Check if the item's link matches the current URL
+        if (item.querySelector('a').href === url) {
+            // Add the 'clicked' class to the item
+            item.classList.add('clicked');
         }
-    </script>
+    });
+</script>
 
-</body>
 
-</html>
+
+
+
+
+
