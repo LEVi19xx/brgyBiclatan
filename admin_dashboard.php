@@ -67,7 +67,7 @@ $colorblotter = $blottercount['color'];
     }
 
     .chart-container canvas {
-        max-width: 50%;
+        max-width: 100%;
         /* Limit the width of each chart to 50% of the container */
         flex-shrink: 0;
         /* Prevent charts from shrinking */
