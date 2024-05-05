@@ -326,6 +326,7 @@ a:hover{
     transform: scale(0.8);
     border: none; /* Initially set border to none */
     transition: border-color 0.3s ease; /* Add transition for border change */
+    width:50px;
 }
 
 /* Responsive adjustments */
@@ -334,7 +335,7 @@ a:hover{
         transform: scale(0.6);
         border-top: 2px solid red; /* Adjust the border width according to the scale */
         border-bottom: 2px solid red; /* Adjust the border width according to the scale */
-        width: calc(100% - 4px); /* Calculate the width based on the border width */
+        width: calc(100% - 5px); /* Calculate the width based on the border width */
     }
 }
 
@@ -343,7 +344,7 @@ a:hover{
         transform: scale(0.5);
         border-top: 1.5px solid red; /* Adjust the border width according to the scale */
         border-bottom: 1.5px solid red; /* Adjust the border width according to the scale */
-        width: calc(100% - 3px); /* Calculate the width based on the border width */
+        width: calc(100% - 6px); /* Calculate the width based on the border width */
     }
 }
 
