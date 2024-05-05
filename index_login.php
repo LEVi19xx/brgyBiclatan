@@ -319,22 +319,8 @@ a:hover{
     }
 }
 
-
-
-.input-container {
-        position: relative;
-    }
-
-    .eye-icon {
-        position: absolute;
-        right: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-        cursor: pointer;
-    }
-
-        /* Add red border style */
-        .g-recaptcha {
+    /* Add red border style */
+    .g-recaptcha {
         border: 2px solid transparent;
         transition: border-color 0.3s ease;
     }
@@ -350,6 +336,19 @@ a:hover{
             margin: auto;
         }
     }
+
+.input-container {
+        position: relative;
+    }
+
+    .eye-icon {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+
     
     </style>
 <body>
@@ -444,18 +443,28 @@ inputs.forEach(input => {
 });
 </script>
 <script>
-    // Function to toggle error class for reCAPTCHA
-    function toggleRecaptchaError() {
-        var recaptcha = document.querySelector(".g-recaptcha");
-        recaptcha.classList.toggle("error");
-    }
+// Function upang suriin ang CAPTCHA at baguhin ang kulay kung hindi pa ito na-click
+function validateCaptcha(event) {
+    // Get the reCAPTCHA response token
+    var recaptchaResponse = grecaptcha.getResponse();
 
-    // Add event listener for reCAPTCHA
-    document.addEventListener("DOMContentLoaded", function () {
-        var recaptcha = document.querySelector(".g-recaptcha");
-        recaptcha.addEventListener("click", function () {
-            recaptcha.classList.remove("error");
-        });
-    });
+    // Find the CAPTCHA container element
+    var captchaContainer = document.querySelector('.g-recaptcha');
+
+    // Check if the reCAPTCHA response is valid
+    if (recaptchaResponse.length === 0) {
+        // Change the border color of the CAPTCHA container to red
+        captchaContainer.style.border = '3px solid red';
+
+        // Stop the form submission
+        event.preventDefault();
+    } else {
+        // If the response is valid, remove the border color
+        captchaContainer.style.border = '';
+    }
+}
+
+// Idagdag ang validateCaptcha function bilang onsubmit event handler ng form
+document.querySelector('form').addEventListener('submit', validateCaptcha);
 </script>
 </html>
