@@ -54,66 +54,65 @@ $colorblotter = $blottercount['color'];
 ?>
 
 <style>
-    /* Custom styles */
-    .container-fluid {
-        min-height: 80%;
-        padding: 0 10px; /* Add padding to the container for better spacing */
-    }
+ /* Custom styles */
+.container-fluid {
+    min-height: 100%;
+    padding: 0 10px; /* Dagdagan ng padding ang container para sa mas magandang pagkakasunud-sunod */
+    overflow-x: auto; /* Gawing scrollable ang container kapag nag-exceed sa viewport width */
+}
 
-    .chart-container {
-        display: flex;
-        flex-direction: column; /* Change flex direction to column for better stacking */
-        align-items: center; /* Center align charts */
-    }
+.chart-container {
+    display: flex;
+    flex-direction: column; /* Baguhin ang flex direction papunta sa column para sa mas magandang pagkakasunud-sunod */
+    align-items: center; /* I-center ang mga graph */
+}
 
+.chart-container canvas {
+    width: 100%; /* Itakda ang lapad sa 100% para punan ang container */
+    height: auto; /* Pahintulutan ang taas na mag-adjust nang automatiko */
+    margin-bottom: 20px;
+}
+
+.btn {
+    margin: 10px auto; /* I-center ang mga button */
+}
+
+@media (max-width: 768px) {
     .chart-container canvas {
-        max-width: calc(100vw - 20px); /* Set max-width to adjust to screen width */
+        max-width: 100%; /* I-set ang maximum width sa 100% */
         margin-bottom: 20px;
-    }
-
-    .btn {
-        margin: 10px auto; /* Center align buttons */
-
-    @media (max-width: 576px) {
-    .chart-container canvas {
-        max-width: 100%;
-        margin-bottom: 10px;
     }
 }
 
-    @media (max-width: 768px) {
-        .chart-container {
-            flex-wrap: wrap;
-        }
-
-        .chart-container canvas {
-            max-width: 100%;
-            margin-bottom: 20px;
-        }
+@media (min-width: 768px) {
+    .chart-container canvas {
+        max-width: 100%; /* Pahabain ang graph sa malalaking screen */
     }
+}
+
 </style>
+
+
 
 <?php 
 include('dashboard_sidebar_start.php');
 ?>
 <br><br><br>
 <!-- Begin Page Content -->
+<!-- Begin Page Content -->
 <div class="container-fluid">
-
-<!-- Page Heading -->
-<div class="row">
-    <canvas id="numberOfRecordsChart" width="2000" height="300"></canvas>
-</div>
-<br>
-<div class="row">
-    <canvas id="otherChart" width="2000" height="400"></canvas>
-</div>
-
-<br>
-<hr>
-<br>
-
-<!-- /.container-fluid -->
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="scrollable"> <!-- Add this container -->
+            <canvas id="numberOfRecordsChart" width="1180" height="250"></canvas>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="scrollable"> <!-- Add this container -->
+            <canvas id="otherChart" width="1180" height="250"></canvas>
+        </div>
+    </div>
 </div>
 <!-- End of Main Content -->
 
