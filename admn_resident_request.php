@@ -218,11 +218,12 @@
                 // Update the "Age" input field
                 document.getElementById('age').value = age;
             }
+        </script>
         <script>
             function updateNationality(value) {
                 document.getElementById("customNationality").value = value;
             }
-        </script>
+
         </script>
 
         <?php 
