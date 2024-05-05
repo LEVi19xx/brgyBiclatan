@@ -327,7 +327,7 @@ ctxNumberOfRecords.canvas.addEventListener('click', handleNumberOfRecordsChartCl
     // Define a mapping between the chart labels and the corresponding PHP page URLs
     var chartUrlMapping = {
     'Barangay Residents': 'admn_resident.php',
-    'Registered Voters': 'admn_resident_registered.php',
+    'Registered Voters': 'admn_resident_crud.php',
     'Unregistered Voters': 'admn_resident_unregistered.php',
     'Male Residents': 'admn_resident_Male.php',
     'Female Residents': 'admn_resident_female.php',
