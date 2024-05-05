@@ -57,25 +57,22 @@ $colorblotter = $blottercount['color'];
     /* Custom styles */
     .container-fluid {
         min-height: 80%;
+        padding: 0 10px; /* Add padding to the container for better spacing */
     }
 
     .chart-container {
         display: flex;
-        width: 100%;
-        overflow-x: auto;
-        /* Allow horizontal scrolling if charts overflow */
+        flex-direction: column; /* Change flex direction to column for better stacking */
+        align-items: center; /* Center align charts */
     }
 
     .chart-container canvas {
-        max-width: 100%;
-        /* Limit the width of each chart to 50% of the container */
-        flex-shrink: 0;
-        /* Prevent charts from shrinking */
+        max-width: calc(100vw - 20px); /* Set max-width to adjust to screen width */
+        margin-bottom: 20px;
     }
 
     .btn {
-        margin-left: 10px;
-    }
+        margin: 10px auto; /* Center align buttons */
 
     @media (max-width: 576px) {
     .chart-container canvas {
