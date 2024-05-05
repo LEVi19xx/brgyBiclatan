@@ -426,15 +426,14 @@ a:hover{
 
         if (passwordInput.type === "password") {
             passwordInput.type = "text";
-            eyeIcon.classList.remove("fa-eye-slash");
-            eyeIcon.classList.add("fa-eye");
+            eyeIcon.textContent = "👁️"; // I-update ang teksto ng icon para maging nakamulat
         } else {
             passwordInput.type = "password";
-            eyeIcon.classList.remove("fa-eye");
-            eyeIcon.classList.add("fa-eye-slash");
+            eyeIcon.textContent = "👁"; // I-update ang teksto ng icon para maging nakapikit
         }
     }
 </script>
+
 <script>
     const inputs = document.querySelectorAll(".input");
 
