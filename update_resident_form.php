@@ -9,9 +9,35 @@
 
 ?>
 
-<?php 
-    include('dashboard_sidebar_start.php');
-?>
+<div class="dropdown ml-auto">
+                <button title="Your Account" class="btn btn-primary dropdown-toggle" style="margin-right: 2px;" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?> <?= $userdetails['firstname'];?>
+                    <span class="caret" style="margin-left: 2px;"></span>
+                </button>
+                <ul class="dropdown-menu" style="width: 175px;" >
+                    <a class="btn" href="admin_profile.php?id_admin=<?= $userdetails['id_admin'];?>"> <i class="fas fa-user"> &nbsp; </i>Personal Profile  </a>
+                    <!--<a class="btn" href="admin_changepass.php?id_admin=<?= $userdetails['id_admin'];?>"> <i class="fas fa-lock" >&nbsp;</i> Change Password  </a>-->
+                    <a class="btn" href="logout.php"> <i class="fas fa-sign-out-alt">&nbsp;</i> Logout  </a>
+                </ul>
+            </div>
+                    </ul>
+                </nav>
+
+
+<script>
+    // Get the current URL
+    var url = window.location.href;
+    // Get the sidebar items
+    var sidebarItems = document.querySelectorAll('.nav-item');
+
+    // Loop through each sidebar item
+    sidebarItems.forEach(function(item) {
+        // Check if the item's link matches the current URL
+        if (item.querySelector('a').href === url) {
+            // Add the 'clicked' class to the item
+            item.classList.add('clicked');
+        }
+    });
+</script>
 
 <!-- Begin Page Content -->
 
