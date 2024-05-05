@@ -54,14 +54,14 @@
 
     <div class="row"> 
         <div class="col">
-            <form method="POST">
+            <!--<form method="POST">
                 <div class="input-icons">
                     <i class="fa fa-search icon"></i>
                     <input type="search" class="form-control" name="keyword" style="border-radius: 30px;" value="" required=""/>
                 </div>
                 <button class="btn btn-success" style="width: 70px; font-size: 15px; border-radius:5px; margin-left:42%;" name="search_bspermit">Search</button>
                 <a href="admn_blotterreport.php" class="btn btn-info" style="width: 70px; font-size: 15px; border-radius:5px;">Reload</a>
-            </form>
+            </form>-->
             <br>
         </div>
     </div>
