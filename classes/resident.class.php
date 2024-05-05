@@ -364,6 +364,13 @@ public function profile_update_admin() {
         return $view;
     }
 
+    public function view_sp(){
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE `single_parent` = 'Yes' and request_status = 'approved'");
+        $stmt->execute();
+        $view = $stmt->fetchAll();
+        return $view;
+    }
 
 
 
