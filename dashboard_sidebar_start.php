@@ -221,7 +221,7 @@
                                 </form>
                             </div>
                         </li>
-
+<br>
                         <!-- Nav Item - User Information -->
                             <div class="dropdown ml-auto">
                 <button title="Your Account" class="btn btn-primary dropdown-toggle" style="margin-right: 2px;" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?> <?= $userdetails['firstname'];?>
