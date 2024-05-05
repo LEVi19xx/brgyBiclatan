@@ -283,6 +283,18 @@ a:hover{
     color: #fff;
 }
 
+/* Adjust the border thickness for smaller screens */
+@media screen and (max-width: 768px) {
+    .g-recaptcha {
+        border-width: 1px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .g-recaptcha {
+        border-width: 0.5px;
+    }
+}
 
 @media screen and (max-width: 1050px){
     .container{
@@ -444,27 +456,29 @@ inputs.forEach(input => {
 </script>
 <script>
 // Function upang suriin ang CAPTCHA at baguhin ang kulay kung hindi pa ito na-click
+// Function to check the CAPTCHA and change the border color if it's not clicked
 function validateCaptcha(event) {
-    // Kunin ang reCAPTCHA response token
+    // Get the reCAPTCHA response token
     var recaptchaResponse = grecaptcha.getResponse();
 
-    // Hanapin ang CAPTCHA container element
+    // Find the CAPTCHA container element
     var captchaContainer = document.querySelector('.g-recaptcha');
 
-    // Tingnan kung valid ang reCAPTCHA response
+    // Check if the reCAPTCHA response is valid
     if (recaptchaResponse.length === 0) {
-        // Baguhin ang border color ng CAPTCHA container sa pula
+        // Change the border color of the CAPTCHA container to red
         captchaContainer.style.border = '2px solid red';
 
-        // Itigil ang form submission
+        // Stop the form submission
         event.preventDefault();
     } else {
-        // Kung valid ang response, alisin ang border color
+        // If the response is valid, remove the border color
         captchaContainer.style.border = '';
     }
 }
 
-// Idagdag ang validateCaptcha function bilang onsubmit event handler ng form
+// Add the validateCaptcha function as the onsubmit event handler of the form
 document.querySelector('form').addEventListener('submit', validateCaptcha);
+
 </script>
 </html>
