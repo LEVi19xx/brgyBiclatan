@@ -335,6 +335,7 @@ a:hover{
         border-top: 2px solid red; /* Adjust the border width according to the scale */
         border-bottom: 2px solid red; /* Adjust the border width according to the scale */
         width: calc(100% - 4px); /* Calculate the width based on the border width */
+        border:none;
     }
 }
 
@@ -344,6 +345,7 @@ a:hover{
         border-top: 1.5px solid red; /* Adjust the border width according to the scale */
         border-bottom: 1.5px solid red; /* Adjust the border width according to the scale */
         width: calc(100% - 6px); /* Calculate the width based on the border width */
+        border:none;
     }
 }
 
