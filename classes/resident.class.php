@@ -464,6 +464,14 @@ if($hashed_old_password !== $result['password']) {
         return $view;
     }
 
+    public function view_unregistered(){
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * from tbl_resident WHERE `voter` = 'No'");
+        $stmt->execute();
+        $view = $stmt->fetchAll();
+        return $view;
+    }
+
     public function view_resident_male(){
         $connection = $this->openConn();
         $stmt = $connection->prepare("SELECT * from tbl_resident WHERE `sex` = 'Male'");
