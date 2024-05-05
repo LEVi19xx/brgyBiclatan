@@ -372,6 +372,14 @@ public function profile_update_admin() {
         return $view;
     }
 
+    public function view_4ps(){
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE `four_ps` = 'Yes' and request_status = 'approved'");
+        $stmt->execute();
+        $view = $stmt->fetchAll();
+        return $view;
+    }
+
 
 
 
