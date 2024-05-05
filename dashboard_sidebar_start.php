@@ -193,8 +193,8 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3" style="margin-left: 5px; padding-top: 5px; padding-left: 3px; padding-bottom: 0;">
-    <i class="fa fa-bars"></i>
-</button>
+                        <i class="fa fa-bars"></i>
+                    </button>
 
 
                     <!-- Topbar Navbar -->
@@ -224,7 +224,7 @@
                             </div>
                         </li>
                             <div class="dropdown ml-auto">
-                <button title="Your Account" class="btn btn-primary dropdown-toggle" style="margin-right: 2px;" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?> <?= $userdetails['firstname'];?>
+                <button title="Your Account" class="btn btn-primary dropdown-toggle" style="margin-right: 2px; margin-top: 5px;" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?> <?= $userdetails['firstname'];?>
                     <span class="caret" style="margin-left: 2px;"></span>
                 </button>
                 <ul class="dropdown-menu" style="width: 175px;" >
