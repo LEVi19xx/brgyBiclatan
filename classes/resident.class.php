@@ -358,7 +358,7 @@ public function profile_update_admin() {
 
     public function view_pwd(){
         $connection = $this->openConn();
-        $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE `pwd` = 'Yes'");
+        $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE `pwd` = 'Yes' and request_status = 'approved'");
         $stmt->execute();
         $view = $stmt->fetchAll();
         return $view;
