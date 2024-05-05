@@ -380,6 +380,14 @@ public function profile_update_admin() {
         return $view;
     }
 
+    public function view_resident_indigent(){
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE `indigent` = 'Yes' and request_status = 'approved'");
+        $stmt->execute();
+        $view = $stmt->fetchAll();
+        return $view;
+    }
+
 
 
 
