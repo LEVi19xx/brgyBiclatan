@@ -324,23 +324,26 @@ a:hover{
     transform-origin: 0;
     -webkit-transform: scale(0.8);
     transform: scale(0.8);
-    border: 3px solid transparent; /* Initially set border to transparent */
+    border: none; /* Initially set border to none */
 }
 
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
     .div .g-recaptcha {
         transform: scale(0.6);
-        border-width: 2px; /* Adjust the border width according to the scale */
+        border-top: 2px solid red; /* Adjust the border width according to the scale */
+        border-bottom: 2px solid red; /* Adjust the border width according to the scale */
     }
 }
 
 @media screen and (max-width: 576px) {
     .div .g-recaptcha {
         transform: scale(0.5);
-        border-width: 1.5px; /* Adjust the border width according to the scale */
+        border-top: 1.5px solid red; /* Adjust the border width according to the scale */
+        border-bottom: 1.5px solid red; /* Adjust the border width according to the scale */
     }
 }
+
 
 
 .input-container {
