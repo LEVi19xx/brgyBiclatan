@@ -107,11 +107,11 @@
             </li>
 
             <!-- Announcement Management -->
-            <li class="nav-item">
+            <!--<li class="nav-item">
                 <a class="nav-link" href="list_of_services.php">
                     <i class="fas fa-list"></i>
                     <span> List of Services</span></a>
-            </li>
+            </li>-->
 
             <!-- Certificate of Residency -->
             <li class="nav-item">
