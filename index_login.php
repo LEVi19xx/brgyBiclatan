@@ -391,7 +391,7 @@ a:hover{
                    <div class="div">
                         <h5>Password</h5>
                         <input type="password" class="input" id="password" name="password">
-                        <span class="eye-icon" onclick="togglePasswordVisibility()">👁️</span>
+                        <span class="eye-icon" onclick="togglePasswordVisibility()">https://icons8.com/icon/60022/eye</span>
                    </div>
                 </div>
                 <div class="div">
