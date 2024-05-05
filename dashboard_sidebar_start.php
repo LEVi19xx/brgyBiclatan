@@ -104,11 +104,11 @@
             </li>
 
             <!-- Announcement Management -->
-            <li class="nav-item">
+            <!--<li class="nav-item">
                 <a class="nav-link" href="list_of_services.php">
                     <i class="fas fa-list"></i>
                     <span> List of Services</span></a>
-            </li>
+            </li>-->
 
             <!-- Certificate of Residency -->
             <li class="nav-item">
@@ -157,12 +157,12 @@
                     <span> Barangay Activities</span></a>
             </li>
 
-            <!-- Announcement Management -->
+            <!-- Announcement Management 
             <li class="nav-item">
                 <a class="nav-link" href="brgyInfo_modal.php">
                     <i class="fas fa-info-circle"></i>
                     <span> Barangay Info</span></a>
-            </li>
+            </li>-->
 
             <!-- Announcement Management -->
             <!--<li class="nav-item">
