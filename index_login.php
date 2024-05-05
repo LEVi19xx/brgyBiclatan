@@ -319,23 +319,32 @@ a:hover{
     }
 }
 
-    /* Add red border style */
-    .g-recaptcha {
-        border: 2px solid transparent;
-        transition: border-color 0.3s ease;
-    }
+.div .g-recaptcha {
+    transform: scale(0.8);
+    transform-origin: 0;
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    border: none; /* Initially set border to none */
+}
 
-    .g-recaptcha.error {
-        border-color: red;
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .div .g-recaptcha {
+        transform: scale(0.7);
+        border-top: 2px solid red; /* Adjust the border width according to the scale */
+        border-bottom: 2px solid red; /* Adjust the border width according to the scale */
     }
+}
 
-    /* Adjust width for responsiveness */
-    @media screen and (max-width: 576px) {
-        .g-recaptcha {
-            width: 80%;
-            margin: auto;
-        }
+@media screen and (max-width: 576px) {
+    .div .g-recaptcha {
+        transform: scale(0.6);
+        border-top: 1.5px solid red; /* Adjust the border width according to the scale */
+        border-bottom: 1.5px solid red; /* Adjust the border width according to the scale */
     }
+}
+
+
 
 .input-container {
         position: relative;
