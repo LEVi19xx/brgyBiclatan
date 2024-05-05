@@ -320,10 +320,13 @@ a:hover{
 }
 
 .div .g-recaptcha {
-    width: 100%; /* Ensure reCAPTCHA fills its container */
-    border: none; /* Remove border from reCAPTCHA */
+    transform: scale(0.8);
+    transform-origin: 0;
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    border: none; /* Initially set border to none */
+    transition: border-color 0.3s ease; /* Add transition for border change */
 }
-
 
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
@@ -391,11 +394,10 @@ a:hover{
                         <span class="eye-icon" onclick="togglePasswordVisibility()">👁️</span>
                    </div>
                 </div>
-                <div class="div" style="border-top: 2px solid red; border-bottom: 2px solid red;">
-    <div class="g-recaptcha" data-sitekey="6LdM0DgUAAAAAHtPjQfbqTX6viYFbOvkcFs_twDp" style="transform:scale(0.8);transform-origin:0;-webkit-transform:scale(0.8);transform:scale(0.8);">
-    </div>
-</div>
-
+                <div class="div">
+                    <div class="g-recaptcha" data-sitekey="6LdM0DgUAAAAAHtPjQfbqTX6viYFbOvkcFs_twDp" style="transform:scale(0.8);transform-origin:0;-webkit-transform:scale(0.8);transform:scale(0.8);">
+                    </div>
+                </div>
                 <button class="btn btn-primary login-button" type="submit" name="login">Log-in</button>
                 <a href="index.php" class="btn1" type="submit" name="login"  style="background-color: #0B5345;">Back to homepage</a>
                 <hr><br>
