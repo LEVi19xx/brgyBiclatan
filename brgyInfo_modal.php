@@ -110,7 +110,6 @@
                                 </div>
                             </div>
                         </div>
-                        <br>
                         <hr>
                         <input type="hidden" name="id_brgy_info" value="1">
                         <center><button class="btn btn-primary" type="submit" name="update_brgy_info" style="width: 120px; font-size: 18px; border-radius:30px;"> 
@@ -123,7 +122,7 @@
         <div class="col-md-2"> </div>
     </div>
     
-    <br>
+    <br><br><br>
 </div>
 <!-- /.container-fluid -->
 
