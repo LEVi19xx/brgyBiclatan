@@ -326,7 +326,7 @@ a:hover{
     transform: scale(0.8);
     border: none; /* Initially set border to none */
     transition: border-color 0.3s ease; /* Add transition for border change */
-    width:50px;
+    width:500px;
 }
 
 /* Responsive adjustments */
