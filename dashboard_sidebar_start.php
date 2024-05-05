@@ -157,12 +157,12 @@
                     <span> Barangay Activities</span></a>
             </li>
 
-            <!-- Announcement Management 
+            <!-- Announcement Management -->
             <li class="nav-item">
                 <a class="nav-link" href="brgyInfo_modal.php">
                     <i class="fas fa-info-circle"></i>
                     <span> Barangay Info</span></a>
-            </li>-->
+            </li>
 
             <!-- Announcement Management -->
             <!--<li class="nav-item">
@@ -171,11 +171,11 @@
                     <span> Position</span></a>
             </li>-->
 
-            <!-- Certificate of Residency -->
+            <!-- Certificate of Residency 
             <li class="nav-item">
                 <a class="nav-link" href="chairman_modal.php?id_system=1">
                     <i class="fas fa-user"></i>
-                    <span> System Info</span></a>
+                    <span> System Info</span></a>-->
             </li>
 
         </ul>
