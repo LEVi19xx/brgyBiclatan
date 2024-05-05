@@ -324,20 +324,24 @@ a:hover{
     transform-origin: 0;
     -webkit-transform: scale(0.8);
     transform: scale(0.8);
+    border: 3px solid transparent; /* Initially set border to transparent */
 }
 
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
     .div .g-recaptcha {
-        transform: scale(0.6); /* Adjust the scale as needed */
+        transform: scale(0.6);
+        border-width: 2px; /* Adjust the border width according to the scale */
     }
 }
 
 @media screen and (max-width: 576px) {
     .div .g-recaptcha {
-        transform: scale(0.5); /* Adjust the scale as needed */
+        transform: scale(0.5);
+        border-width: 1.5px; /* Adjust the border width according to the scale */
     }
 }
+
 
 .input-container {
         position: relative;
@@ -351,27 +355,7 @@ a:hover{
         cursor: pointer;
     }
 
-    /* Add this CSS for responsive red border */
-@media (max-width: 576px) {
-    .g-recaptcha {
-        border-width: 2px;
-    }
-}
-
-@media (min-width: 577px) and (max-width: 768px) {
-    .g-recaptcha {
-        border-width: 3px;
-    }
-}
-
-@media (min-width: 769px) and (max-width: 992px) {
-    .g-recaptcha {
-        border-width: 4px;
-    }
-}
-
-/* Add more media queries for larger screens if needed */
-
+    
     </style>
 <body>
     <img class="wave" src="PHOTOJPG.jpg">
