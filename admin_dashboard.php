@@ -77,6 +77,13 @@ $colorblotter = $blottercount['color'];
         margin-left: 10px;
     }
 
+    @media (max-width: 576px) {
+    .chart-container canvas {
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
     @media (max-width: 768px) {
         .chart-container {
             flex-wrap: wrap;
