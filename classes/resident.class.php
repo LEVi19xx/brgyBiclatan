@@ -325,7 +325,7 @@ public function profile_update_admin() {
 
     public function view_resident_minor(){
         $connection = $this->openConn();
-        $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE `age` <= 17");
+        $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE `age` <= 17 and request_status = 'approved'");
         $stmt->execute();
         $view = $stmt->fetchAll();
         return $view;
@@ -333,7 +333,7 @@ public function profile_update_admin() {
 
     public function view_resident_adult(){
         $connection = $this->openConn();
-        $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE `age` >= 18 AND `age` <= 59");
+        $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE `age` >= 18 AND `age` <= 59 and request_status = 'approved'");
         $stmt->execute();
         $view = $stmt->fetchAll();
         return $view;
@@ -341,7 +341,7 @@ public function profile_update_admin() {
 
     public function view_resident_senior(){
         $connection = $this->openConn();
-        $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE `age` >= 60");
+        $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE `age` >= 60 and request_status = 'approved'");
         $stmt->execute();
         $view = $stmt->fetchAll();
         return $view;
@@ -349,7 +349,7 @@ public function profile_update_admin() {
 
     public function count_resident_senior() {
         $connection = $this->openConn();
-        $stmt = $connection->prepare("SELECT COUNT(*) FROM tbl_resident WHERE `age` >= 60");
+        $stmt = $connection->prepare("SELECT COUNT(*) FROM tbl_resident WHERE `age` >= 60 and request_status = 'approved'");
         $stmt->execute();
         $rescount = $stmt->fetchColumn();
 
