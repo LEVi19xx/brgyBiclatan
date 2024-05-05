@@ -1603,14 +1603,14 @@ nav {
         </div>
         <div class="footer__form">
            <ul class="footer__nav">
-          <li class="footer__link"><a href="">brgybiclatan@gmail.com</a></li>
-          <li class="footer__link"><a href="">046-509-1664</a></li>
+          <li class="footer__link"><a>brgybiclatan@gmail.com</a></li>
+          <li class="footer__link"><a>046-509-1664</a></li>
         </ul>
         </div>
       </div>
       <div class="section__container footer__bar">
         <div class="footer__logo">
-          <h4><a href="">Barangay Biclatan InfoSystem</a></h4>
+          <h4><a>Barangay Biclatan InfoSystem</a></h4>
           <p>Copyright © 2024 Barangay Biclatan InfoSystem. All rights reserved.</p>
         </div>
        
