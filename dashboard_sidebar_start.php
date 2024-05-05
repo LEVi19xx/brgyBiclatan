@@ -192,9 +192,10 @@
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
                     <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-auto" style="padding-top: 5px; padding-left: 3px; padding-bottom: 0;">
+                    <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3" style="margin-left: 5px; padding-top: 5px; padding-left: 3px; padding-bottom: 0;">
     <i class="fa fa-bars"></i>
 </button>
+
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
