@@ -453,6 +453,50 @@
             -webkit-transform: scale(1.4); /* Safari 3-8 */
             transform: scale(1.4); 
             }
+            /* Scroll to top button styles */
+#scrollTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 50px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: rgba(17, 43, 90, 0.7);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 100%;
+    transition: background-color 0.3s ease;
+    font-size: 30px; /* Adjust the size as needed */
+}
+
+#scrollTopBtn:hover {
+    background-color: rgba(17, 43, 90, 0.9);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    #scrollTopBtn {
+        bottom: 20px;
+        right: 60px;
+        padding: 10px; /* Adjust padding for smaller screens */
+        font-size: 30px; /* Adjust font size for smaller screens */
+    }
+}
+
+
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    #scrollTopBtn {
+        font-size: 30px;
+        bottom: 10px;
+        right: 10px;
+        padding: 10px;
+    }
+}
+
 
         </style>
     </head>
@@ -832,39 +876,28 @@
                 </script> 
                   | Barangay Biclatan Information System
             </div>
-
+        
+            <button id="scrollTopBtn" onclick="scrollToTop()">
+                <i class="fas fa-angle-up"></i>
+    </button>
         </footer>
         
         <script>
-            var slideIndex = 1;
-            showSlides(slideIndex);
+      // Function to scroll to the top of the page
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
 
-            function plusSlides(n) {
-            showSlides(slideIndex += n);
-            }
-
-            function currentSlide(n) {
-            showSlides(slideIndex = n);
-            }
-
-            function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("demo");
-            var captionText = document.getElementById("caption");
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";
-            dots[slideIndex-1].className += " active";
-            captionText.innerHTML = dots[slideIndex-1].alt;
-            }
-        </script>
+      // Show or hide the scroll to top button based on scroll position
+      window.onscroll = function () {
+        var scrollTopBtn = document.getElementById("scrollTopBtn");
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          scrollTopBtn.style.display = "block";
+        } else {
+          scrollTopBtn.style.display = "none";
+        }
+      };
+    </script>
 
         <script>
             // Add the following code if you want the name of the file appear on select
