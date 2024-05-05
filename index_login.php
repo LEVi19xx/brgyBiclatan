@@ -345,7 +345,7 @@ a:hover{
 
     .eye-icon {
         position: absolute;
-        left: 400px;
+        right: 10px;
         top: 50%;
         transform: translateY(-50%);
         cursor: pointer;
