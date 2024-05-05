@@ -348,7 +348,21 @@ a:hover{
         right: 10px;
         top: 50%;
         transform: translateY(-50%);
+        width: 24px; /* Adjust the width and height as needed */
+        height: auto;
         cursor: pointer;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    /* Background image for the open eye (visible password) */
+    .eye-icon.open {
+        background-image: url('open-eye.png'); /* Replace 'open-eye.png' with your open eye icon image */
+    }
+
+    /* Background image for the closed eye (hidden password) */
+    .eye-icon.closed {
+        background-image: url('closed-eye.png'); /* Replace 'closed-eye.png' with your closed eye icon image */
     }
     </style>
 <body>
@@ -377,7 +391,7 @@ a:hover{
                    <div class="div">
                         <h5>Password</h5>
                         <input type="password" class="input" id="password" name="password">
-                        <span class="eye-icon" onclick="togglePasswordVisibility()">👁️</span>
+                        <span class="eye-icon closed" onclick="togglePasswordVisibility()" id="eye-icon"></span>
                    </div>
                 </div>
                 <div class="div">
