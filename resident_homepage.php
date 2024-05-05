@@ -271,7 +271,49 @@
             -webkit-transform: scale(1.4); /* Safari 3-8 */
             transform: scale(1.4); 
         }
+        /* Scroll to top button styles */
+#scrollTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 50px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: rgba(17, 43, 90, 0.7);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 100%;
+    transition: background-color 0.3s ease;
+    font-size: 40px; /* Adjust the size as needed */
+}
 
+#scrollTopBtn:hover {
+    background-color: rgba(17, 43, 90, 0.9);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    #scrollTopBtn {
+        bottom: 20px;
+        right: 60px;
+        padding: 10px; /* Adjust padding for smaller screens */
+        font-size: 30px; /* Adjust font size for smaller screens */
+    }
+}
+
+
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    #scrollTopBtn {
+        font-size: 30px;
+        bottom: 10px;
+        right: 10px;
+        padding: 10px;
+    }
+}
     </style>
 </head>
 <body> 
@@ -280,10 +322,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
     <!-- Back-to-Top and Back Button -->
 
-    <a data-toggle="tooltip" title="Back-To-Top" class="top-link hide" href="" id="js-top">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6"><path d="M12 6H0l6-6z"/></svg>
-        <span class="screen-reader-text">Back to top</span>
-    </a>
+   
 
     <!-- Eto yung navbar -->
 
@@ -537,7 +576,9 @@
                     </ul>
                 </div>
 
-   
+                <button id="scrollTopBtn" onclick="scrollToTop()">
+      <i class="ri-arrow-up-s-line"></i>
+    </button>
 
         <!--/.Footer Links-->
 
@@ -556,44 +597,20 @@
     </footer>
 
     <script>
-        // Set a variable for our button element.
-        const scrollToTopButton = document.getElementById('js-top');
+      // Function to scroll to the top of the page
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
 
-        // Let's set up a function that shows our scroll-to-top button if we scroll beyond the height of the initial window.
-        const scrollFunc = () => {
-        // Get the current scroll value
-        let y = window.scrollY;
-        
-        // If the scroll value is greater than the window height, let's add a class to the scroll-to-top button to show it!
-        if (y > 0) {
-            scrollToTopButton.className = "top-link show";
+      // Show or hide the scroll to top button based on scroll position
+      window.onscroll = function () {
+        var scrollTopBtn = document.getElementById("scrollTopBtn");
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          scrollTopBtn.style.display = "block";
         } else {
-            scrollToTopButton.className = "top-link hide";
+          scrollTopBtn.style.display = "none";
         }
-        };
-
-        window.addEventListener("scroll", scrollFunc);
-
-        const scrollToTop = () => {
-        // Let's set a variable for the number of pixels we are from the top of the document.
-        const c = document.documentElement.scrollTop || document.body.scrollTop;
-        
-        // If that number is greater than 0, we'll scroll back to 0, or the top of the document.
-        // We'll also animate that scroll with requestAnimationFrame:
-        // https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
-        if (c > 0) {
-            window.requestAnimationFrame(scrollToTop);
-            // ScrollTo takes an x and a y coordinate.
-            // Increase the '10' value to get a smoother/slower scroll!
-            window.scrollTo(0, c - c / 10);
-        }
-        };
-
-        // When the button is clicked, run our ScrolltoTop function above!
-        scrollToTopButton.onclick = function(e) {
-        e.preventDefault();
-        scrollToTop();
-        }
+      };
     </script>
 
     <script>
