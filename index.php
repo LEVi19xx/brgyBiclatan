@@ -11,7 +11,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
-    <title>Bicatan Info System</title>
+    <title>Biclatan Info System</title>
   </head>
 
   <style>
