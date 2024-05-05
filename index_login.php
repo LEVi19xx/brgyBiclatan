@@ -319,31 +319,6 @@ a:hover{
     }
 }
 
-.div .g-recaptcha {
-    transform: scale(0.8);
-    transform-origin: 0;
-    -webkit-transform: scale(0.8);
-    transform: scale(0.8);
-    border: none; /* Initially set border to none */
-}
-
-/* Responsive adjustments */
-@media screen and (max-width: 768px) {
-    .div .g-recaptcha {
-        transform: scale(0.6);
-        border-top: 2px solid red; /* Adjust the border width according to the scale */
-        border-bottom: 2px solid red; /* Adjust the border width according to the scale */
-    }
-}
-
-@media screen and (max-width: 576px) {
-    .div .g-recaptcha {
-        transform: scale(0.5);
-        border-top: 1.5px solid red; /* Adjust the border width according to the scale */
-        border-bottom: 1.5px solid red; /* Adjust the border width according to the scale */
-    }
-}
-
 
 
 .input-container {
@@ -358,6 +333,23 @@ a:hover{
         cursor: pointer;
     }
 
+        /* Add red border style */
+        .g-recaptcha {
+        border: 2px solid transparent;
+        transition: border-color 0.3s ease;
+    }
+
+    .g-recaptcha.error {
+        border-color: red;
+    }
+
+    /* Adjust width for responsiveness */
+    @media screen and (max-width: 576px) {
+        .g-recaptcha {
+            width: 80%;
+            margin: auto;
+        }
+    }
     
     </style>
 <body>
@@ -452,28 +444,18 @@ inputs.forEach(input => {
 });
 </script>
 <script>
-// Function upang suriin ang CAPTCHA at baguhin ang kulay kung hindi pa ito na-click
-function validateCaptcha(event) {
-    // Get the reCAPTCHA response token
-    var recaptchaResponse = grecaptcha.getResponse();
-
-    // Find the CAPTCHA container element
-    var captchaContainer = document.querySelector('.g-recaptcha');
-
-    // Check if the reCAPTCHA response is valid
-    if (recaptchaResponse.length === 0) {
-        // Change the border color of the CAPTCHA container to red
-        captchaContainer.style.border = '3px solid red';
-
-        // Stop the form submission
-        event.preventDefault();
-    } else {
-        // If the response is valid, remove the border color
-        captchaContainer.style.border = '';
+    // Function to toggle error class for reCAPTCHA
+    function toggleRecaptchaError() {
+        var recaptcha = document.querySelector(".g-recaptcha");
+        recaptcha.classList.toggle("error");
     }
-}
 
-// Idagdag ang validateCaptcha function bilang onsubmit event handler ng form
-document.querySelector('form').addEventListener('submit', validateCaptcha);
+    // Add event listener for reCAPTCHA
+    document.addEventListener("DOMContentLoaded", function () {
+        var recaptcha = document.querySelector(".g-recaptcha");
+        recaptcha.addEventListener("click", function () {
+            recaptcha.classList.remove("error");
+        });
+    });
 </script>
 </html>
