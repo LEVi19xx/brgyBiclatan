@@ -325,19 +325,19 @@ ctxNumberOfRecords.canvas.addEventListener('click', handleNumberOfRecordsChartCl
     });
 
     // Define a mapping between the chart labels and the corresponding PHP page URLs
-var chartUrlMapping = {
-    'Barangay Residents': 'admn_resident_crud.php',
-    'Registered Voters': 'admn_resident_crud.php',
-    'Unregistered Voters': 'admn_resident_request.php',
-    'Male Residents': 'admn_resident_curd.php',
-    'Female Residents': 'admn_resident_crud.php',
-    'Minor Residents': 'aadmn_resident_crud.php',
-    'Senior Residents': 'admn_resident_crud.php',
-    'PWD Residents': 'admn_resident_crud.php',
-    'Single Parents': 'admn_resident_crud.php',
-    '4Ps Members': 'admn_resident_crud.php',
-    'Indigent Residents': 'aadmn_resident_crud.php',
-    'Malnourished Residents': 'admn_resident_crud.php'
+    var chartUrlMapping = {
+    'Barangay Residents': 'admn_resident.php',
+    'Registered Voters': 'admn_resident_registered.php',
+    'Unregistered Voters': 'admn_resident_unregistered.php',
+    'Male Residents': 'admn_resident_Male.php',
+    'Female Residents': 'admn_resident_female.php',
+    'Minor Residents': 'admn_resident_minor.php',
+    'Senior Residents': 'admn_resident_senior.php',
+    'PWD Residents': 'admn_resident_pwd.php',
+    'Single Parents': 'admn_resident_single.php',
+    '4Ps Members': 'admn_resident_4ps.php',
+    'Indigent Residents': 'admn_resident_indigent.php',
+    'Malnourished Residents': 'admn_resident_Mal.php'
 };
 
 // Add click event listener to the other chart
