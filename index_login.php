@@ -454,7 +454,7 @@ function validateCaptcha(event) {
     // Tingnan kung valid ang reCAPTCHA response
     if (recaptchaResponse.length === 0) {
         // Baguhin ang border color ng CAPTCHA container sa pula
-        captchaContainer.style.border = '2px solid red';
+        captchaContainer.style.border = '3px solid red';
 
         // Itigil ang form submission
         event.preventDefault();
