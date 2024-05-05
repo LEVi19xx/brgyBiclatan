@@ -1265,7 +1265,7 @@ nav {
   
 
     <section class="section__container service__container" id="service">
-      <center><h2 class="section__header"><br>Our Services</h2>
+      <center><h2 class="section__header">Our Services</h2>
       <p class="section__description">
         Barangay services cover safety, health, social welfare, development, dispute resolution, and disaster response.
       </p></center>
