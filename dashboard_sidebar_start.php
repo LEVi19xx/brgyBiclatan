@@ -186,14 +186,13 @@
 
             <!-- Main Content -->
             <div id="content">
-
-                <!-- Topbar -->
-                <nav>
-
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3" style="justify-content: flex-start; ">
+            <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3" style="justify-content: flex-start; padding: 0;">
                         <i class="fa fa-bars"></i>
                     </button>
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
