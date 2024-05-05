@@ -391,7 +391,7 @@ a:hover{
                    <div class="div">
                         <h5>Password</h5>
                         <input type="password" class="input" id="password" name="password">
-                        <span class="eye-icon" onclick="togglePasswordVisibility()">👁️‍🗨️</span>
+                        <span class="eye-icon" onclick="togglePasswordVisibility()">👁️</span>
                    </div>
                 </div>
                 <div class="div">
@@ -426,7 +426,7 @@ a:hover{
 
         if (passwordInput.type === "password") {
             passwordInput.type = "text";
-            eyeIcon.textContent = "👁️‍🗨️"; // I-update ang teksto ng icon para maging nakamulat
+            eyeIcon.textContent = "👁️"; // I-update ang teksto ng icon para maging nakamulat
         } else {
             passwordInput.type = "password";
             eyeIcon.textContent = "👁️‍🗨️"; // I-update ang teksto ng icon para maging nakapikit
