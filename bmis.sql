@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2024 at 08:36 PM
+-- Generation Time: May 05, 2024 at 06:40 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -33,13 +33,6 @@ CREATE TABLE `approval` (
   `apstatus` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `approval`
---
-
-INSERT INTO `approval` (`id_approval`, `id_resident`, `apstatus`) VALUES
-(1, 56, 'pending');
-
 -- --------------------------------------------------------
 
 --
@@ -64,7 +57,7 @@ CREATE TABLE `brgy_info` (
 --
 
 INSERT INTO `brgy_info` (`id_brgy_info`, `brgy`, `municipal`, `province`, `email`, `contact`, `openhours`, `background`, `vision`, `mission`) VALUES
-(1, 'Biclatan', 'General Trias', 'General Trias', 'brgybiclatan@gmail.com', '046-509-1664', 'Open Hours of Barangay: Monday to Friday (8:00 to 5:00)', 'Biclatan is a barangay in the city of General Trias, in the province of Cavite. Its population as determined by the 2020 census was 23,102. This represented 5.13% of the total population of General Trias.', 'To foster a united, sustainable, and inclusive community. Barangay Biclatan is committed to providing essential services, ensuring transparent governance, and preserving our cultural heritage and environment. We strive to empower residents through education, promote economic development, and enhance the overall well-being of our community while celebrating our unique identity and contributing to greater prosperity of Oriental Mindoro.', 'We aspire to be a model barangay that prioritizes the well-being of our people, foster unity, and embracing the progress while preserving our cultural heritage and natural resources. Through collective effort and participatory governance, we aim to create a safe, resilient and empowered community that values equity, environmental stewardship, and continuous learning.');
+(1, 'Biclatan', 'General Trias', 'General Trias', 'brgybiclatan@gmail.com', '046-509-1664', 'Open Hours of Barangay: Monday to Friday (8:00 to 5:00)', 'Biclatan is a barangay in the city of General Trias, in the province of Cavite. Its population as determined by the 2020 census was 23,102. This represented 5.13% of the total population of General Trias. Biclatan is situated at approximately 14.2769, 120.9161, in the island of Luzon. Elevation at these coordinates is estimated at 158.1 meters or 518.7 feet above mean sea level.', 'To foster a united, sustainable, and inclusive community. Barangay Biclatan is committed to providing essential services, ensuring transparent governance, and preserving our cultural heritage and environment. We strive to empower residents through education, promote economic development, and enhance the overall well-being of our community while celebrating our unique identity and contributing to greater prosperity of Oriental Mindoro.', 'We aspire to be a model barangay that prioritizes the well-being of our people, foster unity, and embracing the progress while preserving our cultural heritage and natural resources. Through collective effort and participatory governance, we aim to create a safe, resilient and empowered community that values equity, environmental stewardship, and continuous learning.');
 
 -- --------------------------------------------------------
 
@@ -139,13 +132,6 @@ CREATE TABLE `system_info` (
   `poweredBy` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `system_info`
---
-
-INSERT INTO `system_info` (`id_system`, `name`, `acronym`, `poweredBy`) VALUES
-(1, 'Barangay Biclatan Information System', 'BBIS', 'Ive Generalao');
-
 -- --------------------------------------------------------
 
 --
@@ -158,15 +144,6 @@ CREATE TABLE `tbl_activities` (
   `date` date NOT NULL,
   `image` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tbl_activities`
---
-
-INSERT INTO `tbl_activities` (`id_activity`, `name`, `date`, `image`) VALUES
-(5, '(CECOOP) Donate SINGNAGES', '2024-02-13', 'uploads/p5.jpg'),
-(6, 'BARANGAY ASSEMBLY DAY', '2024-02-16', 'uploads/p2.jpg'),
-(7, 'FREE Anti-Rabies Vaccination', '2024-04-16', 'uploads/p4.jpg');
 
 -- --------------------------------------------------------
 
@@ -190,10 +167,8 @@ CREATE TABLE `tbl_admin` (
 --
 
 INSERT INTO `tbl_admin` (`id_admin`, `email`, `password`, `lname`, `fname`, `mi`, `role`, `user_status`) VALUES
-(1, 'admin1@gmail.com', '6964f527f011df8756f87c3e8a76884f', 'Tosper', 'Rafael Jr.', 'M', 'administrator', ''),
-(2, 'admin2@gmail.com', '6964f527f011df8756f87c3e8a76884f', 'Simon', 'Marian', '', 'administrator', ''),
-(3, 'admin3@gmail.com', '6964f527f011df8756f87c3e8a76884f', 'Obena', 'Katrina', 'T', 'administrator', ''),
-(4, 'admin4@gmail.com', '6964f527f011df8756f87c3e8a76884f', 'Villano', 'Kristine Joy', 'G', 'administrator', '');
+(1, 'biclatan@gmail.com', 'ee09a1ffa8fb53bfacc1291a57a080f9', 'Barangay', 'Biclatan', '', 'administrator', ''),
+(2, 'admin2@gmail.com', '6964f527f011df8756f87c3e8a76884f', 'Simon', 'Marian', '', 'administrator', '');
 
 -- --------------------------------------------------------
 
@@ -208,13 +183,6 @@ CREATE TABLE `tbl_announcement` (
   `start_date` date NOT NULL,
   `addedby` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tbl_announcement`
---
-
-INSERT INTO `tbl_announcement` (`id_announcement`, `event`, `target`, `start_date`, `addedby`) VALUES
-(6, 'Free Consultations available from June 13, 2021 until June 25, 2021', NULL, '2021-06-12', 'vilfamat, vincent');
 
 -- --------------------------------------------------------
 
@@ -237,16 +205,6 @@ CREATE TABLE `tbl_blotter` (
   `narrative` mediumtext NOT NULL,
   `timeapplied` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tbl_blotter`
---
-
-INSERT INTO `tbl_blotter` (`id_blotter`, `id_resident`, `lname`, `fname`, `mi`, `houseno`, `street`, `brgy`, `municipal`, `blot_photo`, `contact`, `narrative`, `timeapplied`) VALUES
-(1, 23, 'Coloma', 'Charmaine', 'Briongos', 'Blk. 2 Lot 5', 'Kamatisan', 'Dalig', 'Antipolo City', '', '09602033667', 'ADMINISTRATOR DASHBOARD\r\n Dashboard\r\nUSER MANAGEMENT\r\n Pending of Approvals\r\n Barangay Officials\r\n Barangay Residents\r\nBARANGAY SERVICES\r\n Announcements\r\n List of Services\r\n Certificate of Residency\r\n Business Clearance\r\n Barangay Clearance\r\n Certificate of Indigency\r\n Blotter Report\r\nSETTINGS\r\n Barangay Activities\r\n Barangay Info\r\n Position\r\n System Info\r\nUpdate Peace and Order Data\r\nLast Name:\r\nColoma\r\nFirst Name:\r\nCharmaine\r\nMiddle Name:\r\nBriongos\r\nContact Number:\r\n09602033667\r\nHouse No:\r\nBlk. 2 Lot 5\r\nStreet:\r\nKamatisan\r\nBarangay:\r\nDalig\r\nMunicipality:\r\nAntipolo City\r\nNarrative Report:\r\nADMINISTRATOR DASHBOARD\r\n Dashboard\r\nUSER MANAGEMENT\r\n Requested\r\n Barangay Officials\r\n Barangay Res...\r\n2023 - 2024 | Barangay Biclatan Information SystemADMINISTRATOR DASHBOARD\r\n Dashboard\r\nUSER MANAGEMENT\r\n Pending of Approvals\r\n Barangay Officials\r\n Barangay Residents\r\nBARANGAY SERVICES\r\n Announcements\r\n List of Services\r\n Certificate of Residency\r\n Business Clearance\r\n Barangay Clearance\r\n Certificate of Indigency\r\n Blotter Report\r\nSETTINGS\r\n Barangay Activities\r\n Barangay Info\r\n Position\r\n System Info\r\nUpdate Peace and Order Data\r\nLast Name:\r\nColoma\r\nFirst Name:\r\nCharmaine\r\nMiddle Name:\r\nBriongos\r\nContact Number:\r\n09602033667\r\nHouse No:\r\nBlk. 2 Lot 5\r\nStreet:\r\nKamatisan\r\nBarangay:\r\nDalig\r\nMunicipality:\r\nAntipolo City\r\nNarrative Report:\r\nADMINISTRATOR DASHBOARD\r\n Dashboard\r\nUSER MANAGEMENT\r\n Requested\r\n Barangay Officials\r\n Barangay Res...\r\n2023 - 2024 | Barangay Biclatan Information SystemADMINISTRATOR DASHBOARD\r\n Dashboard\r\nUSER MANAGEMENT\r\n Pending of Approvals\r\n Barangay Officials\r\n Barangay Residents\r\nBARANGAY SERVICES\r\n Announcements\r\n List of Services\r\n Certificate of Residency\r\n Business Clearance\r\n Barangay Clearance\r\n Certificate of Indigency\r\n Blotter Report\r\nSETTINGS\r\n Barangay Activities\r\n Barangay Info\r\n Position\r\n System Info\r\nUpdate Peace and Order Data\r\nLast Name:\r\nColoma\r\nFirst Name:\r\nCharmaine\r\nMiddle Name:\r\nBriongos\r\nContact Number:\r\n09602033667\r\nHouse No:\r\nBlk. 2 Lot 5\r\nStreet:\r\nKamatisan\r\nBarangay:\r\nDalig\r\nMunicipality:\r\nAntipolo City\r\nNarrative Report:\r\nADMINISTRATOR DASHBOARD\r\n Dashboard\r\nUSER MANAGEMENT\r\n Requested\r\n Barangay Officials\r\n Barangay Res...\r\n2023 - 2024 | Barangay Biclatan Information SystemADMINISTRATOR DASHBOARD\r\n Dashboard\r\nUSER MANAGEMENT\r\n Pending of Approvals\r\n Barangay Officials\r\n Barangay Residents\r\nBARANGAY SERVICES\r\n Announcements\r\n List of Services\r\n Certificate of Residency\r\n Business Clearance\r\n Barangay Clearance\r\n Certificate of Indigency\r\n Blotter Report\r\nSETTINGS\r\n Barangay Activities\r\n Barangay Info\r\n Position\r\n System Info\r\nUpdate Peace and Order Data\r\nLast Name:\r\nColoma\r\nFirst Name:\r\nCharmaine\r\nMiddle Name:\r\nBriongos\r\nContact Number:\r\n09602033667\r\nHouse No:\r\nBlk. 2 Lot 5\r\nStreet:\r\nKamatisan\r\nBarangay:\r\nDalig\r\nMunicipality:\r\nAntipolo City\r\nNarrative Report:\r\nADMINISTRATOR DASHBOARD\r\n Dashboard\r\nUSER MANAGEMENT\r\n Requested\r\n Barangay Officials\r\n Barangay Res...\r\n2023 - 2024 | Barangay Biclatan Information SystemADMINISTRATOR DASHBOARD\r\n Dashboard\r\nUSER MANAGEMENT\r\n Pending of Approvals\r\n Barangay Officials\r\n Barangay Residents\r\nBARANGAY SERVICES\r\n Announcements\r\n List of Services\r\n Certificate of Residency\r\n Business Clearance\r\n Barangay Clearance\r\n Certificate of Indigency\r\n Blotter Report\r\nSETTINGS\r\n Barangay Activities\r\n Barangay Info\r\n Position\r\n System Info\r\nUpdate Peace and Order Data\r\nLast Name:\r\nColoma\r\nFirst Name:\r\nCharmaine\r\nMiddle Name:\r\nBriongos\r\nContact Number:\r\n09602033667\r\nHouse No:\r\nBlk. 2 Lot 5\r\nStreet:\r\nKamatisan\r\nBarangay:\r\nDalig\r\nMunicipality:\r\nAntipolo City\r\nNarrative Report:\r\nADMINISTRATOR DASHBOARD\r\n Dashboard\r\nUSER MANAGEMENT\r\n Requested\r\n Barangay Officials\r\n Barangay Res...\r\n2023 - 2024 | Barangay Biclatan Information SystemADMINISTRATOR DASHBOARD\r\n Dashboard\r\nUSER MANAGEMENT\r\n Pending of Approvals\r\n Barangay Officials\r\n Barangay Residents\r\nBARANGAY SERVICES\r\n Announcements\r\n List of Services\r\n Certificate of Residency\r\n Business Clearance\r\n Barangay Clearance\r\n Certificate of Indigency\r\n Blotter Report\r\nSETTINGS\r\n Barangay Activities\r\n Barangay Info\r\n Position\r\n System Info\r\nUpdate Peace and Order Data\r\nLast Name:\r\nColoma\r\nFirst Name:\r\nCharmaine\r\nMiddle Name:\r\nBriongos\r\nContact Number:\r\n09602033667\r\nHouse No:\r\nBlk. 2 Lot 5\r\nStreet:\r\nKamatisan\r\nBarangay:\r\nDalig\r\nMunicipality:\r\nAntipolo City\r\nNarrative Report:\r\nADMINISTRATOR DASHBOARD\r\n Dashboard\r\nUSER MANAGEMENT\r\n Requested\r\n Barangay Officials\r\n Barangay Res...\r\n2023 - 2024 | Barangay Biclatan Information SystemADMINISTRATOR DASHBOARD\r\n Dashboard\r\nUSER MANAGEMENT\r\n Pending of Approvals\r\n Barangay Officials\r\n Barangay Residents\r\nBARANGAY SERVICES\r\n Announcements\r\n List of Services\r\n Certificate of Residency\r\n Business Clearance\r\n Barangay Clearance\r\n Certificate of Indigency\r\n Blotter Report\r\nSETTINGS\r\n Barangay Activities\r\n Barangay Info\r\n Position\r\n System Info\r\nUpdate Peace and Order Data\r\nLast Name:\r\nColoma\r\nFirst Name:\r\nCharmaine\r\nMiddle Name:\r\nBriongos\r\nContact Number:\r\n09602033667\r\nHouse No:\r\nBlk. 2 Lot 5\r\nStreet:\r\nKamatisan\r\nBarangay:\r\nDalig\r\nMunicipality:\r\nAntipolo City\r\nNarrative Report:\r\nADMINISTRATOR DASHBOARD\r\n Dashboard\r\nUSER MANAGEMENT\r\n Requested\r\n Barangay Officials\r\n Barangay Res...\r\n2023 - 2024 | Barangay Biclatan Information SystemADMINISTRATOR DASHBOARD\r\n Dashboard\r\nUSER MANAGEMENT\r\n Pending of Approvals\r\n Barangay Officials\r\n Barangay Residents\r\nBARANGAY SERVICES\r\n Announcements\r\n List of Services\r\n Certificate of Residency\r\n Business Clearance\r\n Barangay Clearance\r\n Certificate of Indigency\r\n Blotter Report\r\nSETTINGS\r\n Barangay Activities\r\n Barangay Info\r\n Position\r\n System Info\r\nUpdate Peace and Order Data\r\nLast Name:\r\nColoma\r\nFirst Name:\r\nCharmaine\r\nMiddle Name:\r\nBriongos\r\nContact Number:\r\n09602033667\r\nHouse No:\r\nBlk. 2 Lot 5\r\nStreet:\r\nKamatisan\r\nBarangay:\r\nDalig\r\nMunicipality:\r\nAntipolo City\r\nNarrative Report:\r\nADMINISTRATOR DASHBOARD\r\n Dashboard\r\nUSER MANAGEMENT\r\n Requested\r\n Barangay Officials\r\n Barangay Res...\r\n2023 - 2024 | Barangay Biclatan Information SystemADMINISTRATOR DASHBOARD\r\n Dashboard\r\nUSER MANAGEMENT\r\n Pending of Approvals\r\n Barangay Officials\r\n Barangay Residents\r\nBARANGAY SERVICES\r\n Announcements\r\n List of Services\r\n Certificate of Residency\r\n Business Clearance\r\n Barangay Clearance\r\n Certificate of Indigency\r\n Blotter Report\r\nSETTINGS\r\n Barangay Activities\r\n Barangay Info\r\n Position\r\n System Info\r\nUpdate Peace and Order Data\r\nLast Name:\r\nColoma\r\nFirst Name:\r\nCharmaine\r\nMiddle Name:\r\nBriongos\r\nContact Number:\r\n09602033667\r\nHouse No:\r\nBlk. 2 Lot 5\r\nStreet:\r\nKamatisan\r\nBarangay:\r\nDalig\r\nMunicipality:\r\nAntipolo City\r\nNarrative Report:\r\nADMINISTRATOR DASHBOARD\r\n Dashboard\r\nUSER MANAGEMENT\r\n Requested\r\n Barangay Officials\r\n Barangay Res...\r\n2023 - 2024 | Barangay Biclatan Information SystemADMINISTRATOR DASHBOARD\r\n Dashboard\r\nUSER MANAGEMENT\r\n Pending of Approvals\r\n Barangay Officials\r\n Barangay Residents\r\nBARANGAY SERVICES\r\n Announcements\r\n List of Services\r\n Certificate of Residency\r\n Business Clearance\r\n Barangay Clearance\r\n Certificate of Indigency\r\n Blotter Report\r\nSETTINGS\r\n Barangay Activities\r\n Barangay Info\r\n Position\r\n System Info\r\nUpdate Peace and Order Data\r\nLast Name:\r\nColoma\r\nFirst Name:\r\nCharmaine\r\nMiddle Name:\r\nBriongos\r\nContact Number:\r\n09602033667\r\nHouse No:\r\nBlk. 2 Lot 5\r\nStreet:\r\nKamatisan\r\nBarangay:\r\nDalig\r\nMunicipality:\r\nAntipolo City\r\nNarrative Report:\r\nADMINISTRATOR DASHBOARD\r\n Dashboard\r\nUSER MANAGEMENT\r\n Requested\r\n Barangay Officials\r\n Barangay Res...\r\n2023 - 2024 | Barangay Biclatan Information SystemADMINISTRATOR DASHBOARD\r\n Dashboard\r\nUSER MANAGEMENT\r\n Pending of Approvals\r\n Barangay Officials\r\n Barangay Residents\r\nBARANGAY SERVICES\r\n Announcements\r\n List of Services\r\n Certificate of Residency\r\n Business Clearance\r\n Barangay Clearance\r\n Certificate of Indigency\r\n Blotter Report\r\nSETTINGS\r\n Barangay Activities\r\n Barangay Info\r\n Position\r\n System Info\r\nUpdate Peace and Order Data\r\nLast Name:\r\nColoma\r\nFirst Name:\r\nCharmaine\r\nMiddle Name:\r\nBriongos\r\nContact Number:\r\n09602033667\r\nHouse No:\r\nBlk. 2 Lot 5\r\nStreet:\r\nKamatisan\r\nBarangay:\r\nDalig\r\nMunicipality:\r\nAntipolo City\r\nNarrative Report:\r\nADMINISTRATOR DASHBOARD\r\n Dashboard\r\nUSER MANAGEMENT\r\n Requested\r\n Barangay Officials\r\n Barangay Res...\r\n2023 - 2024 | Barangay Biclatan Information SystemADMINISTRATOR DASHBOARD\r\n Dashboard\r\nUSER MANAGEMENT\r\n Pending of Approvals\r\n Barangay Officials\r\n Barangay Residents\r\nBARANGAY SERVICES\r\n Announcements\r\n List of Services\r\n Certificate of Residency\r\n Business Clearance\r\n Barangay Clearance\r\n Certificate of Indigency\r\n Blotter Report\r\nSETTINGS\r\n Barangay Activities\r\n Barangay Info\r\n Position\r\n System Info\r\nUpdate Peace and Order Data\r\nLast Name:\r\nColoma\r\nFirst Name:\r\nCharmaine\r\nMiddle Name:\r\nBriongos\r\nContact Number:\r\n09602033667\r\nHouse No:\r\nBlk. 2 Lot 5\r\nStreet:\r\nKamatisan\r\nBarangay:\r\nDalig\r\nMunicipality:\r\nAntipolo City\r\nNarrative Report:\r\nADMINISTRATOR DASHBOARD\r\n Dashboard\r\nUSER MANAGEMENT\r\n Requested\r\n Barangay Officials\r\n Barangay Res...\r\n2023 - 2024 | Barangay Biclatan Information SystemADMINISTRATOR DASHBOARD\r\n Dashboard\r\nUSER MANAGEMENT\r\n Pending of Approvals\r\n Barangay Officials\r\n Barangay Residents\r\nBARANGAY SERVICES\r\n Announcements\r\n List of Services\r\n Certificate of Residency\r\n Business Clearance\r\n Barangay Clearance\r\n Certificate of Indigency\r\n Blotter Report\r\nSETTINGS\r\n Barangay Activities\r\n Barangay Info\r\n Position\r\n System Info\r\nUpdate Peace and Order Data\r\nLast Name:\r\nColoma\r\nFirst Name:\r\nCharmaine\r\nMiddle Name:\r\nBriongos\r\nContact Number:\r\n09602033667\r\nHouse No:\r\nBlk. 2 Lot 5\r\nStreet:\r\nKamatisan\r\nBarangay:\r\nDalig\r\nMunicipality:\r\nAntipolo City\r\nNarrative Report:\r\nADMINISTRATOR DASHBOARD\r\n Dashboard\r\nUSER MANAGEMENT\r\n Requested\r\n Barangay Officials\r\n Barangay Res...\r\n2023 - 2024 | Barangay Biclatan Information SystemADMINISTRATOR DASHBOARD\r\n Dashboard\r\nUSER MANAGEMENT\r\n Pending of Approvals\r\n Barangay Officials\r\n Barangay Residents\r\nBARANGAY SERVICES\r\n Announcements\r\n List of Services\r\n Certificate of Residency\r\n Business Clearance\r\n Barangay Clearance\r\n Certificate of Indigency\r\n Blotter Report\r\nSETTINGS\r\n Barangay Activities\r\n Barangay Info\r\n Position\r\n System Info\r\nUpdate Peace and Order Data\r\nLast Name:\r\nColoma\r\nFirst Name:\r\nCharmaine\r\nMiddle Name:\r\nBriongos\r\nContact Number:\r\n09602033667\r\nHouse No:\r\nBlk. 2 Lot 5\r\nStreet:\r\nKamatisan\r\nBarangay:\r\nDalig\r\nMunicipality:\r\nAntipolo City\r\nNarrative Report:\r\nADMINISTRATOR DASHBOARD\r\n Dashboard\r\nUSER MANAGEMENT\r\n Requested\r\n Barangay Officials\r\n Barangay Res...\r\n2023 - 2024 | Barangay Biclatan Information SystemADMINISTRATOR DASHBOARD\r\n Dashboard\r\nUSER MANAGEMENT\r\n Pending of Approvals\r\n Barangay Officials\r\n Barangay Residents\r\nBARANGAY SERVICES\r\n Announcements\r\n List of Services\r\n Certificate of Residency\r\n Business Clearance\r\n Barangay Clearance\r\n Certificate of Indigency\r\n Blotter Report\r\nSETTINGS\r\n Barangay Activities\r\n Barangay Info\r\n Position\r\n System Info\r\nUpdate Peace and Order Data\r\nLast Name:\r\nColoma\r\nFirst Name:\r\nCharmaine\r\nMiddle Name:\r\nBriongos\r\nContact Number:\r\n09602033667\r\nHouse No:\r\nBlk. 2 Lot 5\r\nStreet:\r\nKamatisan\r\nBarangay:\r\nDalig\r\nMunicipality:\r\nAntipolo City\r\nNarrative Report:\r\nADMINISTRATOR DASHBOARD\r\n Dashboard\r\nUSER MANAGEMENT\r\n Requested\r\n Barangay Officials\r\n Barangay Res...\r\n2023 - 2024 | Barangay Biclatan Information SystemADMINISTRATOR DASHBOARD\r\n Dashboard\r\nUSER MANAGEMENT\r\n Pending of Approvals\r\n Barangay Officials\r\n Barangay Residents\r\nBARANGAY SERVICES\r\n Announcements\r\n List of Services\r\n Certificate of Residency\r\n Business Clearance\r\n Barangay Clearance\r\n Certificate of Indigency\r\n Blotter Report\r\nSETTINGS\r\n Barangay Activities\r\n Barangay Info\r\n Position\r\n System Info\r\nUpdate Peace and Order Data\r\nLast Name:\r\nColoma\r\nFirst Name:\r\nCharmaine\r\nMiddle Name:\r\nBriongos\r\nContact Number:\r\n09602033667\r\nHouse No:\r\nBlk. 2 Lot 5\r\nStreet:\r\nKamatisan\r\nBarangay:\r\nDalig\r\nMunicipality:\r\nAntipolo City\r\nNarrative Report:\r\nADMINISTRATOR DASHBOARD\r\n Dashboard\r\nUSER MANAGEMENT\r\n Requested\r\n Barangay Officials\r\n Barangay Res...\r\n2023 - 2024 | Barangay Biclatan Information System', '2024-04-16 03:10:09'),
-(2, 23, 'Reyes', 'Hannah Joy', 'Briongos', 'Blk. 2 Lot 5', 'Kamatisan', 'Dalig', 'Antipolo City', '', '09123456789', 'Pinalo yung aso', '2024-04-16 03:10:47'),
-(3, 23, 'Vilfamat', 'Vincent', 'Briongos', 'Blk. 2 Lot 5', 'Kamatisan', 'Dalig', 'Antipolo City', 0x4172726179, '2147483647', 'hinataw yung aso namin', '2021-06-30 09:54:15'),
-(5, 0, 'Reyes', 'Hannah Joy', '', '123', 'Macamias', 'Biclatan', 'General Trias', '', '2147483647', 'Pinukpok yung aso', '2024-04-14 02:20:10');
 
 -- --------------------------------------------------------
 
@@ -308,15 +266,6 @@ CREATE TABLE `tbl_bspermit` (
   `aoe` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `tbl_bspermit`
---
-
-INSERT INTO `tbl_bspermit` (`id_bspermit`, `id_resident`, `lname`, `fname`, `mi`, `age`, `bsname`, `houseno`, `street`, `brgy`, `municipal`, `bsindustry`, `aoe`) VALUES
-(3, 45, 'Coloma', 'Charmaine', 'Baldo', 24, 'Coloma\'s Meat Stand', '123', 'Purok 2', 'Biclatan', 'General Trias Cavite', 'Food', 4),
-(6, 0, 'Coloma', 'Charmaine Joyce', '', 0, 'Meat Stand', '123', 'Macamis', 'Biclatan', 'General Trias', 'Food', 4),
-(7, 0, 'testing', 'testing', '', 0, 'Meat Stand', '9754', 'Macamias', 'Biclatan', 'General Trias', 'HealthCare', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -337,15 +286,6 @@ CREATE TABLE `tbl_clearance` (
   `status` varchar(255) NOT NULL,
   `age` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tbl_clearance`
---
-
-INSERT INTO `tbl_clearance` (`id_clearance`, `id_resident`, `lname`, `fname`, `mi`, `purpose`, `houseno`, `street`, `brgy`, `municipal`, `status`, `age`) VALUES
-(4, 44, 'Coloma', 'Charmaine', 'Baldo', 'NBI/Police Clearance', '123', 'Purok 1', 'Yuson', 'Guimba', 'Single', '24'),
-(6, 0, 'testing', 'testing', '', 'Job Requirement', '424', 'Macamias', 'Biclatan', 'General Trias', 'Single', '56'),
-(8, 0, 'Reyes', 'Hannah', '', 'Others', '424', 'Sampaguita', 'Biclatan', 'General Trias', 'In a relationship', '25');
 
 -- --------------------------------------------------------
 
@@ -368,15 +308,6 @@ CREATE TABLE `tbl_indigency` (
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `tbl_indigency`
---
-
-INSERT INTO `tbl_indigency` (`id_indigency`, `id_resident`, `lname`, `fname`, `mi`, `nationality`, `houseno`, `street`, `brgy`, `municipal`, `purpose`, `date`) VALUES
-(3, 45, 'Coloma', 'Charmaine', 'Baldo', 'Filipino', '123', 'Purok 2', 'Yuson', 'Guimba', 'Financial Transaction', '2024-03-25'),
-(4, 0, 'Reyes', 'Hannah Joy', '', 'Filipino', '123', 'Macamias', 'Biclatan', 'General Trias', 'Job/Employment', '2024-04-14'),
-(5, 0, 'Coloma', 'Charmaine Joyce', '', 'Filipino', '9754', 'Macamias', 'Biclatan', 'General Trias', 'Job/Employment', '2024-04-18');
-
 -- --------------------------------------------------------
 
 --
@@ -392,15 +323,6 @@ CREATE TABLE `tbl_officials` (
   `status` varchar(50) NOT NULL,
   `avatar` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tbl_officials`
---
-
-INSERT INTO `tbl_officials` (`id_official`, `name`, `position`, `termstart`, `termend`, `status`, `avatar`) VALUES
-(1, '              Hon. Dionido U. Quitain', 'Presiding Officer', '2018-06-08', '2026-06-28', 'Active', ''),
-(2, '  Hon. Criswin P. Roxas', 'Sk Chairperson', '2021-05-01', '2025-05-15', 'Not Active', ''),
-(3, 'Josue G. Ortega', 'Barangay Secretary', '2017-06-06', '2027-09-30', 'Active', '');
 
 -- --------------------------------------------------------
 
@@ -423,15 +345,6 @@ CREATE TABLE `tbl_rescert` (
   `date` date NOT NULL,
   `purpose` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tbl_rescert`
---
-
-INSERT INTO `tbl_rescert` (`id_rescert`, `id_resident`, `lname`, `fname`, `mi`, `age`, `nationality`, `houseno`, `street`, `brgy`, `municipal`, `date`, `purpose`) VALUES
-(111112, 44, 'Reyes', 'Hannah Joy', 'Dizon', '24', 'Filipino', '123', 'Purok 1', 'Yuson', 'Guimba', '2024-03-24', 'Certify that you are living in a certain barangay'),
-(111121, 0, 'Coloma', 'Charmaine Joyce', '', '23', 'Filipino', '123', 'Macamis', 'Biclatan', 'General Trais', '2024-04-16', 'Financial Transaction'),
-(111122, 0, 'testing', 'testing', '', '56', 'Filipino', '424', 'Macamias', 'Biclatan', 'General Trais', '2024-04-16', 'Financial Transaction');
 
 -- --------------------------------------------------------
 
@@ -473,17 +386,6 @@ CREATE TABLE `tbl_resident` (
   `addedby` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `tbl_resident`
---
-
-INSERT INTO `tbl_resident` (`id_resident`, `request_status`, `res_photo`, `email`, `password`, `lname`, `fname`, `mi`, `age`, `sex`, `status`, `houseno`, `street`, `brgy`, `municipal`, `address`, `contact`, `bdate`, `bplace`, `nationality`, `family_role`, `voter`, `pwd`, `indigent`, `single_parent`, `malnourished`, `four_ps`, `vaccinated`, `pregnancy`, `role`, `addedby`) VALUES
-(45, 'approved', NULL, 'coloma@gmail.com', '6964f527f011df8756f87c3e8a76884f', 'Coloma', 'Charmaine', 'Baldo', 24, 'Female', 'Single', '123', 'Purok 2', 'Biclatan', 'Nueva Ecija', NULL, '09952650331', '1999-11-20', 'Veronica', 'Filipino', 'No', 'Yes', 'No', 'No', 'No', 'No', 'No', 'Yes', 'Yes', 'resident', NULL),
-(56, 'approved', NULL, 'balmores@gmail.com', '6964f527f011df8756f87c3e8a76884f', 'Balmores', 'Santy', 'Palma', 20, 'Male', 'pending', '1234', 'Santiago', 'Biclatan', 'General Trias', NULL, '09672518471', '2003-08-29', 'Veronica', 'Filipino', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'No', 'resident', ''),
-(59, 'pending', NULL, 'almira@gmail.com', '6964f527f011df8756f87c3e8a76884f', 'Coloma', 'Almira Jane', 'Baldo', 21, 'Female', 'Single', '2342', 'Macamias', 'Biclatan', 'General Trias', NULL, '09789876564', '2003-03-06', 'Maturanoc', 'Filipino', 'No', 'Yes', 'Yes', 'No', 'No', 'No', 'No', 'Yes', 'No', 'resident', NULL),
-(60, 'pending', NULL, 'johannah@gmail.com', '6964f527f011df8756f87c3e8a76884f', 'Reyes', 'Johannah', 'Dizon', 23, 'Female', 'Single', '6547', 'Macamias', 'Biclatan', 'General Trias', NULL, '09786543578', '2000-11-20', 'Veronica', 'Filipino', 'Yes', 'Yes', 'Yes', 'No', 'Yes', 'Yes', 'Yes', 'Yes', 'No', 'resident', NULL),
-(69, 'approved', NULL, 'norlyn@gmail.com', '6964f527f011df8756f87c3e8a76884f', 'Reyes', 'Norlyn', '', 31, 'Female', 'Married', '12', 'Macamias', 'Biclatan', 'General Trias', NULL, '09553194514', '1992-11-15', 'Maturanoc', 'Filipino', 'Yes', 'Yes', 'No', 'No', 'Yes', 'No', 'No', '', '', 'resident', NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -499,16 +401,6 @@ CREATE TABLE `tbl_services` (
   `status` varchar(20) NOT NULL,
   `image_service` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tbl_services`
---
-
-INSERT INTO `tbl_services` (`id_services`, `title`, `description`, `fees`, `requires`, `status`, `image_service`) VALUES
-(1, 'BARANGAY CLEARANCE', '', 35.00, 'CEDULA', 'Active', 'uploads/clearance.png'),
-(4, 'CERTIFICATE OF RESIDENCY', '', 35.00, 'CEDULA & BRGY CLEARANCE', 'Active', 'uploads/residency.png'),
-(5, 'CERTIFICATE OF INDIGENCY', '', 35.00, 'CEDULA', 'Active', 'uploads/indigency.png'),
-(6, 'BUSINESS CLEARANCE', '', 35.00, 'CEDULA', 'Active', 'uploads/busper.png');
 
 -- --------------------------------------------------------
 
@@ -531,13 +423,6 @@ CREATE TABLE `tbl_travelpermit` (
   `purpose` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `tbl_travelpermit`
---
-
-INSERT INTO `tbl_travelpermit` (`id_travel`, `id_resident`, `prev_owner`, `breed`, `gender`, `color`, `destination`, `date`, `brgy`, `municipal`, `buyers_name`, `purpose`) VALUES
-(2, 44, 'Reyes Hannah Joy', 'Sheep', 'Female', 'Spotted', 'Farm', '2024-03-25', 'Yuson', 'Guimba', 'Charmaine Joyce Coloma', 'Breeding');
-
 -- --------------------------------------------------------
 
 --
@@ -559,15 +444,6 @@ CREATE TABLE `tbl_user` (
   `role` varchar(255) NOT NULL,
   `addedby` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tbl_user`
---
-
-INSERT INTO `tbl_user` (`id_user`, `email`, `password`, `lname`, `fname`, `mi`, `age`, `sex`, `address`, `contact`, `position`, `role`, `addedby`) VALUES
-(11, 'obena@gmail.com', 'melinda12345', 'Obena', 'Katrina', 'T', 24, 'Female', 'San Miguel, Guimba', '09564123321', 'Barangay Secretary', 'user', 'Rafael Tosper'),
-(12, 'mangalino@gmail.com', 'earl12345', 'Mangalino', 'Jayvee', 'Tayong', 28, 'Male', 'Pasong Inchik, Guimba', '09785631125', 'Barangay Treasurer', 'user', 'Rafael Tosper'),
-(13, 'marian@gmail.com', 'adminMarian@', 'Simon', 'Marian', 'Cabiso', 24, 'Female', '1234, Purok 5, Cavite, Guimba', '09876543211', 'Kagawad', 'user', 'Tosper, Rafael Jr.');
 
 -- --------------------------------------------------------
 
@@ -725,7 +601,7 @@ ALTER TABLE `system_info`
 -- AUTO_INCREMENT for table `tbl_activities`
 --
 ALTER TABLE `tbl_activities`
-  MODIFY `id_activity` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_activity` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tbl_admin`
@@ -737,7 +613,7 @@ ALTER TABLE `tbl_admin`
 -- AUTO_INCREMENT for table `tbl_announcement`
 --
 ALTER TABLE `tbl_announcement`
-  MODIFY `id_announcement` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_announcement` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbl_blotter`
@@ -767,7 +643,7 @@ ALTER TABLE `tbl_indigency`
 -- AUTO_INCREMENT for table `tbl_officials`
 --
 ALTER TABLE `tbl_officials`
-  MODIFY `id_official` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_official` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tbl_rescert`
@@ -785,7 +661,7 @@ ALTER TABLE `tbl_resident`
 -- AUTO_INCREMENT for table `tbl_services`
 --
 ALTER TABLE `tbl_services`
-  MODIFY `id_services` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_services` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbl_travelpermit`
