@@ -442,4 +442,29 @@ inputs.forEach(input => {
     input.addEventListener("blur", remcl);
 });
 </script>
+<script>
+// Function upang suriin ang CAPTCHA at baguhin ang kulay kung hindi pa ito na-click
+function validateCaptcha(event) {
+    // Kunin ang reCAPTCHA response token
+    var recaptchaResponse = grecaptcha.getResponse();
+
+    // Hanapin ang CAPTCHA container element
+    var captchaContainer = document.querySelector('.g-recaptcha');
+
+    // Tingnan kung valid ang reCAPTCHA response
+    if (recaptchaResponse.length === 0) {
+        // Baguhin ang border color ng CAPTCHA container sa pula
+        captchaContainer.style.border = '2px solid red';
+
+        // Itigil ang form submission
+        event.preventDefault();
+    } else {
+        // Kung valid ang response, alisin ang border color
+        captchaContainer.style.border = '';
+    }
+}
+
+// Idagdag ang validateCaptcha function bilang onsubmit event handler ng form
+document.querySelector('form').addEventListener('submit', validateCaptcha);
+</script>
 </html>
