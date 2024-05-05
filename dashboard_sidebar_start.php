@@ -186,7 +186,7 @@
 
             <!-- Main Content -->
             <div id="content">
-            <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3" style="justify-content: flex-start; padding: 0;">
+            <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3" style="justify-content: flex-start; padding-top: 5px; padding-left: 3px; padding-bottom: 0;">
                         <i class="fa fa-bars"></i>
                     </button>
                 <!-- Topbar -->
