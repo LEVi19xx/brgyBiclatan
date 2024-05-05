@@ -191,7 +191,7 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                    <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
 
@@ -220,13 +220,6 @@
                                     </div>
                                 </form>
                             </div>
-                        </li>
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
                         </li>
                             <div class="dropdown ml-auto">
                 <button title="Your Account" class="btn btn-primary dropdown-toggle" style="margin-right: 2px;" type="button" data-toggle="dropdown"><?= $userdetails['surname'];?> <?= $userdetails['firstname'];?>
