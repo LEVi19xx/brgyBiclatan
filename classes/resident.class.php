@@ -482,7 +482,7 @@ if($hashed_old_password !== $result['password']) {
 
     public function view_resident_male(){
         $connection = $this->openConn();
-        $stmt = $connection->prepare("SELECT * from tbl_resident WHERE `sex` = 'Male'");
+        $stmt = $connection->prepare("SELECT * from tbl_resident WHERE `sex` = 'Male' and request_status = 'approved'");
         $stmt->execute();
         $view = $stmt->fetchAll();
         return $view;
@@ -490,7 +490,7 @@ if($hashed_old_password !== $result['password']) {
 
     public function view_resident_female(){
         $connection = $this->openConn();
-        $stmt = $connection->prepare("SELECT * from tbl_resident WHERE `sex` = 'Female'");
+        $stmt = $connection->prepare("SELECT * from tbl_resident WHERE `sex` = 'Female' and request_status = 'approved'");
         $stmt->execute();
         $view = $stmt->fetchAll();
         return $view;
