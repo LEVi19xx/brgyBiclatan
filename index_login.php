@@ -352,7 +352,7 @@ a:hover{
     }
     </style>
 <body>
-    <img class="wave" src="assets/newheader.jpg">
+    <img class="wave" src="PHOTOJPG.jpg">
     <div class="container">
         <div class="img">
             <img src="assets/goloo.png">
