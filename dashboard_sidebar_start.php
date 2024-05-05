@@ -27,7 +27,7 @@
 }
 
 .navbar.navbar-expand.navbar-light.bg-white.topbar.mb-4.static-top.shadow .btn.btn-link.rounded-circle.mr-3 i{
-    justify-content: flex-start;
+    margin-right: 1000px;
 }
 
     </style>
