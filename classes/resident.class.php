@@ -388,6 +388,15 @@ public function profile_update_admin() {
         return $view;
     }
 
+    public function view_malnourished(){
+        $connection = $this->openConn();
+        $stmt = $connection->prepare("SELECT * FROM tbl_resident WHERE `malnourished` = 'Yes' and request_status = 'approved'");
+        $stmt->execute();
+        $view = $stmt->fetchAll();
+        return $view;
+    }
+
+
 
 
 
