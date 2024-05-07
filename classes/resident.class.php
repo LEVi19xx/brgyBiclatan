@@ -35,7 +35,7 @@ public function create_resident() {
         $role = $_POST['role'];
 
 
-        if ($_SERVER['PHP_SELF'] === '/BrgyBiclatan/resident_registration.php'){
+        if ($_SERVER['PHP_SELF'] === '/resident_registration.php' && $_SERVER['HTTP_HOST'] === 'biclataninfosystem.com') {
             $request_status = 'pending';
 
             // Open the database connection
