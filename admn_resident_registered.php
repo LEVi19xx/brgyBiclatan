@@ -18,7 +18,7 @@
         $staffcountm = $staffbmis->count_mstaff();
         $staffcountf = $staffbmis->count_fstaff();
         
-        $view = $residentbmis->view_resident();
+        $view = $residentbmis->view_voter();
         $residentbmis->create_resident();
         $upstaff = $residentbmis->update_resident();
         $residentbmis->delete_resident();
@@ -105,7 +105,7 @@
         <?php 
         if(is_array($view)) {
             $i = 1;
-            foreach($rescountvoter as $row) {
+            foreach($view as $row) {
         ?>
                 <tr>
                     <td><?= $i ?></td>
