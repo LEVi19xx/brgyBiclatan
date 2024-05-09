@@ -169,7 +169,7 @@ date_default_timezone_set('Asia/Manila');
                         <p class="print-padding" style="text-indent:40px;text-align: justify;">Issued this <ins><?= date('jS');?></ins> day of <ins><?= date('F');?></ins>, 2024, at Barangay Biclatan, City of General Trias, Cavite.</p> <br>
                         <div style="display: flex;">
                             <div style="flex: 1;"><br><br>
-                                <image src="icons/signature.png" style="width:100px; margin-left:80px; position: absolute;"/><br>
+                                <image src="icons/signature.png" style="width:100px; margin-left:10px; position: absolute;"/><br>
                                 <label style="font-size:18px;margin-left:1em; margin-top: 10px;"><u>HON. IRENEO C. HATID</u></label><br>
                                 <label style="font-size:18px; margin-left:2em;">Punong Barangay</label>
                             </div>
