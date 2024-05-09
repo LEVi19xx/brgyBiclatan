@@ -21,16 +21,16 @@ $resident = $residentbmis->get_single_clearance_walkin($id_clearance);
             }
     }
     @media print {
-        body{
+        body {
             overflow: hidden;
         }
-        img{
+        img {
             display: block !important;
         }
-        image[src="icons/signature.png"] {
+        img[src="icons/signature.png"] {
             margin-left: 180px !important; /* Reset margin for print */
         }
-        .noprint{
+        .noprint {
             display: none !important;
         }
     }
