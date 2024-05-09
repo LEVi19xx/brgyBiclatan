@@ -97,7 +97,7 @@ $colorblotter = $blottercount['color'];
 <?php 
 include('dashboard_sidebar_start.php');
 ?>
-<br><br><br>
+<br>
 <!-- Begin Page Content -->
 <!-- Begin Page Content -->
 <div class="container-fluid">
