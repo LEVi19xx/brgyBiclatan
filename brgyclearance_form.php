@@ -28,7 +28,7 @@ $resident = $residentbmis->get_single_clearance_walkin($id_clearance);
             display: block !important;
         }
         img[src="icons/signature.png"] {
-            margin-left: 100px !important; /* Reset margin for print */
+            margin-left: 120px !important; /* Reset margin for print */
         }
         .noprint {
             display: none !important;
