@@ -673,11 +673,6 @@ nav {
     left: 0;
     transform: translateX(0);
   }
-
-  .choose__image {
-
-  }
-
   .offer__grid__top,
   .offer__grid__bottom {
     grid-template-columns: repeat(2, 1fr);
@@ -1062,7 +1057,7 @@ nav {
         <div class="logo">
             <a href="#"><img src="assets/goloo.png" alt="logo" height="70px" /></a>
           </div>
-        <div class="nav__logo"><a href="#">Biclatan InfoSystem</a></div>
+        <div class="nav__logo"><a href="#home">Biclatan InfoSystem</a></div>
         <ul class="nav__links" id="nav-links">
           <li class="link"><a href="#home">Home</a></li>
           <li class="link"><a href="#choose">About</a></li>
