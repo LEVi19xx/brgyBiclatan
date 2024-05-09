@@ -165,6 +165,6 @@
 <!-- fontawesome icons -->
 <script src="https://kit.fontawesome.com/67a9b7069e.js" crossorigin="anonymous"></script>
 <script src="bootstrap/js/bootstrap.bundle.js" type="text/javascript"> </script>
-
+<br>
 <?php include 'dashboard_sidebar_end.php'; ?>
 </body>
