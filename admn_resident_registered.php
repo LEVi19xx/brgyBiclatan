@@ -22,6 +22,7 @@
         $residentbmis->create_resident();
         $upstaff = $residentbmis->update_resident();
         $residentbmis->delete_resident();
+        
 
 
     ?>
@@ -104,7 +105,7 @@
         <?php 
         if(is_array($view)) {
             $i = 1;
-            foreach($view as $row) {
+            foreach($rescountvoter as $row) {
         ?>
                 <tr>
                     <td><?= $i ?></td>
