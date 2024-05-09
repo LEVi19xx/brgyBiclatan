@@ -239,7 +239,7 @@ ctxNumberOfRecords.canvas.addEventListener('click', handleNumberOfRecordsChartCl
         },
  {
             label: 'Registered Voters',
-            value: <?= $rescount ?>
+            value: <?= $rescountvoter ?>
         },
  {
             label: 'Unregistered Voters',
