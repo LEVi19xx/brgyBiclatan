@@ -84,7 +84,6 @@
                 <h1 class="mb-1 text-center">Pending Requests to Join</h1>
 
                 <hr>
-                <br>
 
                 <!-- Page Heading -->
 

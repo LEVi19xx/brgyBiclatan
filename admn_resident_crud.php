@@ -87,7 +87,6 @@
             <h1 class="mb-4 text-center">Barangay Residents Data</h1>
 
             <hr>
-            <br>
 
             <!-- Page Heading -->
                         

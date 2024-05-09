@@ -45,7 +45,6 @@
     <h1 class="mb-1 text-center">Barangay Officials Data</h1>
 
     <hr>
-    <br>
     <div class="col-md-12">
 
                     </div>

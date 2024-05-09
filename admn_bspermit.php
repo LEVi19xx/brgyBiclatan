@@ -61,7 +61,6 @@
                 <button class="btn btn-success" name="search_bspermit" style="width: 70px; font-size: 15px; border-radius:5px; margin-left:42%;">Search</button>
                 <a href="admn_bspermit.php" class="btn btn-info" style="width: 70px; font-size: 15px; border-radius:5px;">Reload</a>
             </form>
-            <br>
         </div>
     </div>
 

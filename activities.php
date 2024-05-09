@@ -41,7 +41,6 @@
     <!-- Page Heading -->
     <h1 class="mb-4 text-center">Barangay Activities</h1>
     <hr>
-    <br>
     <div class="col-md-12">
     </div>
     <button class="btn btn-success" style="width: 100px; height: 40px; font-size: 14px; border-radius:5px; margin-bottom: 5px;" data-toggle="modal" data-target="#modalServices">
