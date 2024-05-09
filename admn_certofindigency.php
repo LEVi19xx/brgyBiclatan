@@ -59,7 +59,6 @@
                 <button class="btn btn-success" name="search_certofindigency" style="width: 70px; font-size: 15px; border-radius:5px; margin-left:42%;">Search</button>
                 <a href="admn_certofindigency.php" class="btn btn-info" style="width: 70px; font-size: 15px; border-radius:5px;">Reload</a>
             </form>
-            <br>
         </div>
     </div>
 <button class="btn btn-success" style="width: 95px; height: 40px; font-size: 14px; border-radius:5px; margin-bottom: 5px;" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-plus icon" style="padding-left: 0; padding-top: 0; padding-bottom: 0;"></i>Add</button>
